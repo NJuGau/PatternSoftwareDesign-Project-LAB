@@ -89,8 +89,8 @@
     <Content Include="App_Data\LocalDatabase_log.ldf">
       <DependentUpon>LocalDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="home-page\HomePage.aspx" />
-    <Content Include="login-page\LoginPage.aspx" />
+    <Content Include="home\HomePage.aspx" />
+    <Content Include="user\LoginPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -127,31 +127,31 @@
     <Compile Include="ado-model\TransactionHeader.cs">
       <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="home-page\HomePage.aspx.cs">
+    <Compile Include="home\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="home-page\HomePage.aspx.designer.cs">
+    <Compile Include="home\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="login-page\LoginPage.aspx.cs">
+    <Compile Include="user\LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="login-page\LoginPage.aspx.designer.cs">
+    <Compile Include="user\LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="master-page\MasterPage.Master.cs">
+    <Compile Include="master\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="master-page\MasterPage.Master.designer.cs">
+    <Compile Include="master\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="master-page\MasterPage.Master" />
+    <Content Include="master\MasterPage.Master" />
     <EntityDeploy Include="ado-model\LocalDatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LocalDatabaseModel.Designer.cs</LastGenOutput>
