@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Artist](
+	ArtistID INT PRIMARY KEY NOT NULL IDENTITY(1,1),
+	ArtistName VARCHAR(50) NOT NULL,
+	ArtistImage VARCHAR(50) NOT NULL
+)

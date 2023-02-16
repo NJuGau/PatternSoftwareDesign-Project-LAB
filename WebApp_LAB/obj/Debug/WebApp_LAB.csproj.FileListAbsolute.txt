@@ -57,3 +57,7 @@ C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoft
 C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebApp_LAB\obj\Debug\WebApp_LAB.csproj.CopyComplete
 C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebApp_LAB\obj\Debug\WebApp_LAB.dll
 C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebApp_LAB\obj\Debug\WebApp_LAB.pdb
+C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebApp_LAB\bin\EntityFramework.dll
+C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebApp_LAB\bin\EntityFramework.SqlServer.dll
+C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebApp_LAB\bin\EntityFramework.xml
+C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebApp_LAB\bin\EntityFramework.SqlServer.xml

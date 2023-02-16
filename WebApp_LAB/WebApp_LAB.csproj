@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,10 +75,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ado-model\LocalDatabaseModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>LocalDatabaseModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ado-model\LocalDatabaseModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>LocalDatabaseModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\LocalDatabase.mdf" />
+    <Content Include="App_Data\LocalDatabase_log.ldf">
+      <DependentUpon>LocalDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="home-page\HomePage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ado-model\Album.cs">
+      <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\Artist.cs">
+      <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\Cart.cs">
+      <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\Customer.cs">
+      <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\LocalDatabaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalDatabaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\LocalDatabaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\LocalDatabaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\TransactionDetail.cs">
+      <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ado-model\TransactionHeader.cs">
+      <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="home-page\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,6 +144,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="master-page\MasterPage.Master" />
+    <EntityDeploy Include="ado-model\LocalDatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LocalDatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ado-model\LocalDatabaseModel.edmx.diagram">
+      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -97,6 +159,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
