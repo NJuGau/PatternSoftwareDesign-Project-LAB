@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using WebService_LAB.controller;
 
 namespace WebService_LAB.web_service
 {
@@ -18,9 +20,16 @@ namespace WebService_LAB.web_service
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public String login(String email, String password)
         {
-            return "Hello World";
+            return CustomerController.login(email, password);
+        }
+
+
+        [WebMethod]
+        public String register(String name, String email, String gender, String address, String password)
+        {
+            return CustomerController.register(name, email, gender, address, password);
         }
     }
 }

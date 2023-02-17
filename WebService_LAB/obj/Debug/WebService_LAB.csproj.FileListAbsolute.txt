@@ -61,3 +61,5 @@ C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoft
 C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebService_LAB\bin\EntityFramework.SqlServer.dll
 C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebService_LAB\bin\EntityFramework.xml
 C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebService_LAB\bin\EntityFramework.SqlServer.xml
+C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebService_LAB\bin\Newtonsoft.Json.dll
+C:\Users\HP\Documents\Semester 4\LAB\Pattern Software Design\Project\PatternSoftwareDesign-Project-LAB\WebService_LAB\bin\Newtonsoft.Json.xml
