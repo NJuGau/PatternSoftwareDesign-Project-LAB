@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace WebApp_LAB.view.user
+namespace WebApp_LAB.login_page
 {
-    public partial class Register
+    public partial class LoginPage
     {
     }
 }
