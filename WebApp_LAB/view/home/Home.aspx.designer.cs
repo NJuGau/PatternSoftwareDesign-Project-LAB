@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace WebApp_LAB.home_page
+namespace WebApp_LAB.view.home
 {
-    public partial class HomePage
+    public partial class Home
     {
     }
 }
