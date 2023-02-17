@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApp_LAB.login_page
+namespace WebApp_LAB.view.master
 {
-    public partial class LoginPage : System.Web.UI.Page
+    public partial class MainPage : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
