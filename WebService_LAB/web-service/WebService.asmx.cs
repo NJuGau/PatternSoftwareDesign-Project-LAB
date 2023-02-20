@@ -42,5 +42,11 @@ namespace WebService_LAB.web_service
             //return query;
             //return false;
         }
+
+        [WebMethod]
+        public Boolean UpdateArtistByID(int id,String name, String image)
+        {
+            return ArtistController.UpdateArtist(id, name, image);
+        }
     }
 }

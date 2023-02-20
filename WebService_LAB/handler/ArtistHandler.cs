@@ -16,5 +16,10 @@ namespace WebService_LAB.handler
         {
             return ArtistRepository.AddNewArtist(name, image);
         }
+
+        public static Boolean UpdateArtist(int id, String name, String image)
+        {
+            return ArtistRepository.UpdateArtist(id,name, image);
+        }
     }
 }

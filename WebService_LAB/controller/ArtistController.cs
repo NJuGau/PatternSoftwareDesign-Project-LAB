@@ -17,35 +17,32 @@ namespace WebService_LAB.controller
             return ArtistHandler.GetAllArtist();
         }
 
-        public static Boolean AddNewArtist(String name,String image)
+        private static Boolean NameExistValidation(string name)
         {
             WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
-            //List < Artist > artistslist = ArtistController.GetAllArtist();
-            //foreach (Artist a in artistslist)
-            //{
-            //    if (String.Compare(a.ArtistName, name) == 0)
-            //    {
-            //        return "name is already taken";
-            //    }
-            //}
-            String query = "SELECT * FROM Artist WHERE ArtistName = " + name;
-            string connectionString = ConfigurationManager.ConnectionStrings["WebServiceDatabaseEntities"].ConnectionString;
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            List<Artist> artistslist = GetAllArtist();
+            foreach (Artist a in artistslist)
             {
-                while (reader.Read())
+                if (String.Compare(a.ArtistName, name) == 0)
                 {
-                    if(String.Compare(reader.GetString(0), name) == 0)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
-            //return ArtistHandler.AddNewArtist(name, image);
             return true;
+        }
+
+        public static Boolean AddNewArtist(String name,String image)
+        {
+            //validate extension file dan ukuran file di frontend.
+            return NameExistValidation(name) ? false : ArtistHandler.AddNewArtist(name, image);
+        }
+
+        public static Boolean UpdateArtist(int id,String name, String image)
+        {
+            WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+            Artist artist = db.Artists.Find(id);
+            if (artist == null) return false;
+            return ArtistHandler.UpdateArtist(id, name, image);
         }
     }
 }

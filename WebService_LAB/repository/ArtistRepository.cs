@@ -21,4 +21,14 @@ public class ArtistRepository
         db.SaveChanges();
         return true;
     }
+
+    public static Boolean UpdateArtist(int id, String name,String image)
+    {
+        WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+        Artist artist = db.Artists.Find(id);
+        artist.ArtistName = name;
+        artist.ArtistImage = image;
+        db.SaveChanges();
+        return true;
+    }
 }
