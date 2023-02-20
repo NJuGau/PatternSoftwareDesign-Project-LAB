@@ -31,4 +31,19 @@ public class ArtistRepository
         db.SaveChanges();
         return true;
     }
+
+    public static Artist GetArtistByID(int id)
+    {
+        WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+        Artist artist = db.Artists.Find(id);
+        return artist;
+    }
+
+    public static Boolean RemoveArtistByID(int id)
+    {
+        WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+        Artist artist = db.Artists.Find(id);
+        db.Artists.Remove(artist);
+        return true;
+    }
 }

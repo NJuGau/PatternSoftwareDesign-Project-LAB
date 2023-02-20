@@ -21,5 +21,15 @@ namespace WebService_LAB.handler
         {
             return ArtistRepository.UpdateArtist(id,name, image);
         }
+
+        public static Artist GetArtistByID(int id)
+        {
+            return ArtistRepository.GetArtistByID(id);
+        }
+
+        public static Boolean RemoveArtistByID(int id)
+        {
+            return ArtistRepository.RemoveArtistByID(id);
+        }
     }
 }

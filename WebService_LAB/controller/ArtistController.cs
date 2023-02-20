@@ -44,5 +44,21 @@ namespace WebService_LAB.controller
             if (artist == null) return false;
             return ArtistHandler.UpdateArtist(id, name, image);
         }
+
+        public static Artist GetArtistByID(int id)
+        {
+            WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+            Artist artist = db.Artists.Find(id);
+            if (artist == null) return null;
+            return ArtistHandler.GetArtistByID(id);
+        }
+
+        public static Boolean RemoveArtistByID(int id)
+        {
+            WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+            Artist artist = db.Artists.Find(id);
+            if (artist == null) return false;
+            return ArtistHandler.RemoveArtistByID(id);
+        }
     }
 }

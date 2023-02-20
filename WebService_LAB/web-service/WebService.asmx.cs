@@ -37,16 +37,34 @@ namespace WebService_LAB.web_service
         [WebMethod]
         public Boolean AddNewArtist(String name, String image)
         {
-            //String query = "SELECT * FROM Artist WHERE ArtistName = '" + name+"'";
+            //return string 
+            //return ArtistController.AddNewArtist(name, image) == true ? "Successfully add new artist" : "Add new artist failed";
+
+            //return boolean
             return ArtistController.AddNewArtist(name, image);
-            //return query;
-            //return false;
         }
 
         [WebMethod]
         public Boolean UpdateArtistByID(int id,String name, String image)
         {
-            return ArtistController.UpdateArtist(id, name, image);
+            //return ArtistController.UpdateArtist(id, name, image) == true ? "Artist Successfully Updated" : "Artist update failed";
+
+            return ArtistController.UpdateArtist(id, name, image)
+        }
+
+        [WebMethod]
+        public string GetArtistByID(int id)
+        {
+            Artist artist = ArtistController.GetArtistByID(id);
+            String json = JsonConvert.SerializeObject(artist);
+            return json;
+        }
+
+        public Boolean RemoveArtistByID(int id)
+        {
+            //return ArtistController.RemoveArtistByID(id) == true ? "Successfully remove artist" : "Artist remove failed";
+
+            return ArtistController.RemoveArtistByID(id);
         }
     }
 }
