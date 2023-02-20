@@ -1,0 +1,34 @@
+﻿Artist Method :
+
+Operasi : CRUD (Create,Read,Update,Delete)
+Konsep : DDD
+
+Method (return type, cara pakai, dan parameter) : 
+	Create : 
+		AddNewArtist(String,String):
+		-> parameter		: Name , image path
+		-> Return type		: Boolean
+		-> Return data		: Boolean
+
+	Read : 
+		GetAllArtist() :
+		-> parameter		: -
+		-> Return type		: JSON String
+		-> Return data		: all artist from database
+
+		GetArtistByID(INT) : 
+		-> parameter		: Artist ID
+		-> Return type		: JSON String
+		-> Return data		: Artist's Detail
+
+	Update : 
+		UpdateArtistByID(INT) : 
+		-> parameter		: Artist ID
+		-> Return type		: Boolean
+		-> Return data		: Boolean
+
+	Delete : 
+		RemoveArtistByID(INT) :
+		-> parameter		: Artist ID
+		-> Return type		: Boolean
+		-> Return data		: Boolean

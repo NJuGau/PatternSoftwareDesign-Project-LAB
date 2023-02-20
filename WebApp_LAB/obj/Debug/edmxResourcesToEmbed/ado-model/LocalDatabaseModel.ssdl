@@ -94,7 +94,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Transacti__Album__31EC6D26">
+  <Association Name="FK__Transacti__Album__32E0915F">
     <End Role="Album" Type="Self.Album" Multiplicity="1" />
     <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -106,7 +106,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Transacti__Custo__2E1BDC42">
+  <Association Name="FK__Transacti__Custo__2F10007B">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
     <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="*" />
     <ReferentialConstraint>
@@ -118,7 +118,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Transacti__Trans__30F848ED">
+  <Association Name="FK__Transacti__Trans__31EC6D26">
     <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="1" />
     <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -149,15 +149,15 @@
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Cart" EntitySet="Cart" />
     </AssociationSet>
-    <AssociationSet Name="FK__Transacti__Album__31EC6D26" Association="Self.FK__Transacti__Album__31EC6D26">
+    <AssociationSet Name="FK__Transacti__Album__32E0915F" Association="Self.FK__Transacti__Album__32E0915F">
       <End Role="Album" EntitySet="Album" />
       <End Role="TransactionDetail" EntitySet="TransactionDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Transacti__Custo__2E1BDC42" Association="Self.FK__Transacti__Custo__2E1BDC42">
+    <AssociationSet Name="FK__Transacti__Custo__2F10007B" Association="Self.FK__Transacti__Custo__2F10007B">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="TransactionHeader" EntitySet="TransactionHeader" />
     </AssociationSet>
-    <AssociationSet Name="FK__Transacti__Trans__30F848ED" Association="Self.FK__Transacti__Trans__30F848ED">
+    <AssociationSet Name="FK__Transacti__Trans__31EC6D26" Association="Self.FK__Transacti__Trans__31EC6D26">
       <End Role="TransactionHeader" EntitySet="TransactionHeader" />
       <End Role="TransactionDetail" EntitySet="TransactionDetail" />
     </AssociationSet>
