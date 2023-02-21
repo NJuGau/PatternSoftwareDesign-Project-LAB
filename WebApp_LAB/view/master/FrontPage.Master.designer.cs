@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp_LAB.master_page
+namespace WebApp_LAB.view.master
 {
 
 
-    public partial class MasterPage
+    public partial class FrontPage
     {
 
         /// <summary>
@@ -24,15 +24,6 @@ namespace WebApp_LAB.master_page
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// hyperlinkHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlinkHome;
-
-        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -42,12 +33,12 @@ namespace WebApp_LAB.master_page
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// body control.
+        /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder body;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
     }
 }
