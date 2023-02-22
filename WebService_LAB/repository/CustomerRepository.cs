@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebService_LAB.ado_model;
+using WebService_LAB.factory;
 
 namespace WebService_LAB.repository
 {
@@ -17,6 +18,21 @@ namespace WebService_LAB.repository
             }
             return webServiceDatabaseInstance;
         }
+
+        public static Customer checkUniqueEmail(String email)
+        {
+            try
+            {
+                return (from customer in CustomerRepository.getInstance().Customers
+                        where customer.CustomerEmail == email
+                        select customer).First();
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
         public static List<Customer> getAllCustomer()
         {
             return (from customers in CustomerRepository.getInstance().Customers 
@@ -37,16 +53,19 @@ namespace WebService_LAB.repository
             }
         }
 
-        public static Customer addCustomer(String name, String email, String gender, String address, String password)
+        public static String addCustomer(String name, String email, String gender, String address, String password)
         {
-            try
+            Customer newCustomer = CustomerFactory.makeNewCustomer(name, email, gender, address, password);
+            
+            if(newCustomer == null)
             {
-                //TODO: insert query
-                return null;
+                return "Customer insertion failed! Please try again later!";
             }
-            catch (Exception e)
+            else
             {
-                return null;
+                CustomerRepository.getInstance().Customers.Add(newCustomer);
+                CustomerRepository.getInstance().SaveChanges();
+                return "Customer Insertion successful!";
             }
         }
     }

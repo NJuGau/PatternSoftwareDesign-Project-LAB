@@ -8,7 +8,7 @@ namespace WebService_LAB.factory
 {
     public class CustomerFactory
     {
-        public static Customer addCustomer(String name, String email, String gender, String address, String password)
+        public static Customer makeNewCustomer(String name, String email, String gender, String address, String password)
         {
             Customer customer = new Customer();
             customer.CustomerName = name;

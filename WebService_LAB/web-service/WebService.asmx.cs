@@ -31,5 +31,23 @@ namespace WebService_LAB.web_service
         {
             return CustomerController.register(name, email, gender, address, password);
         }
+
+        [WebMethod]
+        public String viewProfile(int iD)
+        {
+            return "view profile";
+        }
+
+        [WebMethod]
+        public String updateProfile(int iD, String name, String email, String gender, String address, String password)
+        {
+            return "update profile";
+        }
+
+        public String deleteAccount(int iD)
+        {
+            return "delete account";
+        }
+
     }
 }
