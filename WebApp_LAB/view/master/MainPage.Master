@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="WebApp_LAB.view.master.MainPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Main Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form" runat="server">
+        <div id="navbar">
+            navbar here
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="footer">
+            footer here
+        </div>
+    </form>
+</body>
+</html>
