@@ -10,7 +10,7 @@ namespace WebService_LAB.controller
 {
     public class CustomerController
     {
-        public static Boolean checkUniqueEmail(String email)
+        private static Boolean checkUniqueEmail(String email)
         {
             Customer sameEmailCustomer = CustomerHandler.checkUniqueEmail(email);
             if(sameEmailCustomer == null)
@@ -22,7 +22,7 @@ namespace WebService_LAB.controller
                 return false;
             }
         }
-        public static Boolean checkAlphaNumeric(String password)
+        private static Boolean checkAlphaNumeric(String password)
         {
             Boolean isAlpha = false;
             Boolean isNumeric = false;
@@ -49,6 +49,50 @@ namespace WebService_LAB.controller
             return false;
         }
 
+        private static String checkAllValidation(String name, String email, String gender, String address, String password)
+        {
+            if (name.Equals(""))
+            {
+                return JsonConvert.SerializeObject("Name must be filled!");
+            }
+            else if (name.Length <= 5 || name.Length >= 50)
+            {
+                return JsonConvert.SerializeObject("Name must be between 5 and 50 characters!");
+            }
+            if (email.Equals(""))
+            {
+                return JsonConvert.SerializeObject("Email must be filled!");
+            }
+            else if (!checkUniqueEmail(email))
+            {
+                return JsonConvert.SerializeObject("Choose another email address. Email must be unique!");
+            }
+            else if (gender.Equals(""))
+            {
+                return JsonConvert.SerializeObject("Gender must be selected!");
+            }
+            else if (address.Equals(""))
+            {
+                return JsonConvert.SerializeObject("Address must be filled!");
+            }
+            else if (!address.EndsWith("Street"))
+            {
+                return JsonConvert.SerializeObject("Address must ends with 'Street'!");
+            }
+            else if (password.Equals(""))
+            {
+                return JsonConvert.SerializeObject("Password must be filled!");
+            }
+            else if (!checkAlphaNumeric(password))
+            {
+                return JsonConvert.SerializeObject("Password must be alphanumeric!");
+            }
+            else
+            {
+                return "";
+            }
+        }
+
         public static String login(String email, String password)
         {
             email = email.ToString();
@@ -73,46 +117,48 @@ namespace WebService_LAB.controller
             address = address.ToString();
             password = password.ToString();
 
-            if (name.Equals(""))
-            {
-                return JsonConvert.SerializeObject("Name must be filled!");
-            }
-            else if(name.Length <= 5 || name.Length >= 50)
-            {
-                return JsonConvert.SerializeObject("Name must be between 5 and 50 characters!");
-            }
-            if (email.Equals(""))
-            {
-                return JsonConvert.SerializeObject("Email must be filled!");
-            }
-            else if (!checkUniqueEmail(email))
-            {
-                return JsonConvert.SerializeObject("Choose another email address. Email must be unique!");
-            }
-            else if (gender.Equals(""))
-            {
-                return JsonConvert.SerializeObject("Gender must be selected!");
-            }
-            else if (address.Equals(""))
-            {
-                return JsonConvert.SerializeObject("Address must be filled!");
-            }
-            else if (address.EndsWith("Street"))
-            {
-                return JsonConvert.SerializeObject("Address must ends with 'Street'!");
-            }
-            else if (password.Equals(""))
-            {
-                return JsonConvert.SerializeObject("Password must be filled!");
-            }
-            else if (!checkAlphaNumeric(password))
-            {
-                return JsonConvert.SerializeObject("Password must be alphanumeric!");
-            }
-            else
+            String errorMessage = checkAllValidation(name, email, gender, address, password);
+
+            if (errorMessage.Equals(""))
             {
                 return CustomerHandler.register(name, email, gender, address, password);
             }
+            else
+            {
+                return errorMessage;
+            }
+        }
+
+        public static String getCustomerProfile(int iD)
+        {
+            iD = Convert.ToInt32(iD);
+            return JsonConvert.SerializeObject(CustomerHandler.getCustomerProfile(iD));
+        }
+
+        public static String updateProfile(int iD, String name, String email, String gender, String address, String password)
+        {
+            name = name.ToString();
+            email = email.ToString();
+            gender = gender.ToString();
+            address = address.ToString();
+            password = password.ToString();
+
+            String errorMessage = checkAllValidation(name, email, gender, address, password);
+
+            if (errorMessage.Equals(""))
+            {
+                return JsonConvert.SerializeObject(CustomerHandler.updateProfile(iD, name, email, gender, address, password));
+            }
+            else
+            {
+                return errorMessage;
+            }
+        }
+
+        public static String deleteAccount(int iD)
+        {
+            iD = Convert.ToInt32(iD);
+            return JsonConvert.SerializeObject(CustomerHandler.deleteAccount(iD));
         }
     }
 }

@@ -23,5 +23,20 @@ namespace WebService_LAB.handler
         {
             return CustomerRepository.addCustomer(name, email, gender, address, password);
         }
+
+        public static Customer getCustomerProfile(int iD)
+        {
+            return CustomerRepository.getCustomerProfile(iD);
+        }
+
+        public static Customer updateProfile(int iD, String name, String email, String gender, String address, String password)
+        {
+            return CustomerRepository.updateProfile(iD, name, email, gender, address, password);
+        }
+
+        public static String deleteAccount(int iD)
+        {
+            return CustomerRepository.deleteCustomer(iD);
+        }
     }
 }

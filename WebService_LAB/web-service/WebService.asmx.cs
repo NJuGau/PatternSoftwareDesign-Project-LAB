@@ -35,18 +35,19 @@ namespace WebService_LAB.web_service
         [WebMethod]
         public String viewProfile(int iD)
         {
-            return "view profile";
+            return CustomerController.getCustomerProfile(iD);
         }
 
         [WebMethod]
         public String updateProfile(int iD, String name, String email, String gender, String address, String password)
         {
-            return "update profile";
+            return CustomerController.updateProfile(iD, name, email, gender, address, password);
         }
 
+        [WebMethod]
         public String deleteAccount(int iD)
         {
-            return "delete account";
+            return CustomerController.deleteAccount(iD);
         }
 
     }

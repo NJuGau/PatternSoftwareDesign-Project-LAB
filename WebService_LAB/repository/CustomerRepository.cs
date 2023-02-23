@@ -68,5 +68,61 @@ namespace WebService_LAB.repository
                 return "Customer Insertion successful!";
             }
         }
+
+        public static Customer getCustomerProfile(int iD)
+        {
+            try
+            {
+                return (from customer in CustomerRepository.getInstance().Customers
+                        where customer.CustomerID == iD
+                        select customer).First();
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+            
+        }
+
+        public static Customer updateProfile(int iD, String name, String email, String gender, String address, String password)
+        {
+            
+            try
+            {
+                Customer updatedCustomer = (from customer in CustomerRepository.getInstance().Customers where customer.CustomerID == iD select customer).FirstOrDefault();
+
+                updatedCustomer.CustomerName = name;
+                updatedCustomer.CustomerEmail = email;
+                updatedCustomer.CustomerGender = gender;
+                updatedCustomer.CustomerAddress = address;
+                updatedCustomer.CustomerPassword = password;
+
+                CustomerRepository.getInstance().SaveChanges();
+
+                return updatedCustomer;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
+        public static String deleteCustomer(int iD)
+        {
+            Customer findDeletedCustomer = CustomerRepository.getInstance().Customers.Find(iD);
+            CustomerRepository.getInstance().Customers.Remove(findDeletedCustomer);
+            CustomerRepository.getInstance().SaveChanges();
+
+            Customer checkCustomerStillExist = CustomerRepository.getInstance().Customers.Find(iD);
+
+            if(checkCustomerStillExist == null)
+            {
+                return "Account successfully deleted!";
+            }
+            else
+            {
+                return "Error! Please try again!";
+            }
+        }
     }
 }

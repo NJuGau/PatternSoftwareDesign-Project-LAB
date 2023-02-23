@@ -16,6 +16,7 @@ namespace WebService_LAB.factory
             customer.CustomerGender = gender;
             customer.CustomerAddress = address;
             customer.CustomerPassword = password;
+            customer.CustomerRole = "Custo";
             return customer;
         }
     }
