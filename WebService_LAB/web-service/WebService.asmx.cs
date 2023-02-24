@@ -21,12 +21,6 @@ namespace WebService_LAB.web_service
     {
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-        [WebMethod]
         public string GetAllArtist()
         {
             List<Artist> artists = ArtistController.GetAllArtist();
@@ -49,7 +43,7 @@ namespace WebService_LAB.web_service
         {
             //return ArtistController.UpdateArtist(id, name, image) == true ? "Artist Successfully Updated" : "Artist update failed";
 
-            return ArtistController.UpdateArtist(id, name, image)
+            return ArtistController.UpdateArtist(id, name, image);
         }
 
         [WebMethod]
@@ -65,6 +59,36 @@ namespace WebService_LAB.web_service
             //return ArtistController.RemoveArtistByID(id) == true ? "Successfully remove artist" : "Artist remove failed";
 
             return ArtistController.RemoveArtistByID(id);
+        }
+
+        [WebMethod]
+        public String login(String email, String password)
+        {
+            return CustomerController.login(email, password);
+        }
+
+        [WebMethod]
+        public String register(String name, String email, String gender, String address, String password)
+        {
+            return CustomerController.register(name, email, gender, address, password);
+        }
+
+        [WebMethod]
+        public String viewProfile(int iD)
+        {
+            return CustomerController.getCustomerProfile(iD);
+        }
+
+        [WebMethod]
+        public String updateProfile(int iD, String name, String email, String gender, String address, String password)
+        {
+            return CustomerController.updateProfile(iD, name, email, gender, address, password);
+        }
+
+        [WebMethod]
+        public String deleteAccount(int iD)
+        {
+            return CustomerController.deleteAccount(iD);
         }
     }
 }

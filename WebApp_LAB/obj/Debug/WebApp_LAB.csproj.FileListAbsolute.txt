@@ -107,3 +107,7 @@ C:\Users\ASUS\Downloads\Project PSD Lab\PatternSoftwareDesign-Project-LAB\WebApp
 C:\Users\ASUS\Downloads\Project PSD Lab\PatternSoftwareDesign-Project-LAB\WebApp_LAB\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\ASUS\Downloads\Project PSD Lab\PatternSoftwareDesign-Project-LAB\WebApp_LAB\bin\Newtonsoft.Json.dll
 C:\Users\ASUS\Downloads\Project PSD Lab\PatternSoftwareDesign-Project-LAB\WebApp_LAB\bin\Newtonsoft.Json.xml
+C:\Users\HP\Desktop\LAB-PSD\PatternSoftwareDesign-Project-LAB\WebApp_LAB\obj\Debug\WebApp_LAB.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\LAB-PSD\PatternSoftwareDesign-Project-LAB\WebApp_LAB\obj\Debug\WebApp_LAB.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\LAB-PSD\PatternSoftwareDesign-Project-LAB\WebApp_LAB\obj\Debug\WebApp_LAB.dll
+C:\Users\HP\Desktop\LAB-PSD\PatternSoftwareDesign-Project-LAB\WebApp_LAB\obj\Debug\WebApp_LAB.pdb

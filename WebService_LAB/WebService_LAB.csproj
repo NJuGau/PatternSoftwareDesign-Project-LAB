@@ -129,10 +129,14 @@
       <DependentUpon>WebServiceModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="controller\ArtistController.cs" />
+    <Compile Include="controller\CustomerContoller.cs" />
     <Compile Include="factory\ArtistFactory.cs" />
+    <Compile Include="factory\CustomerFactory.cs" />
     <Compile Include="handler\ArtistHandler.cs" />
+    <Compile Include="handler\CustomerHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\ArtistRepository.cs" />
+    <Compile Include="repository\CustomerRepository.cs" />
     <Compile Include="web-service\WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>
       <SubType>Component</SubType>
