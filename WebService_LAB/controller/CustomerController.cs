@@ -121,7 +121,7 @@ namespace WebService_LAB.controller
 
             if (errorMessage.Equals(""))
             {
-                return CustomerHandler.register(name, email, gender, address, password);
+                return JsonConvert.SerializeObject(CustomerHandler.register(name, email, gender, address, password));
             }
             else
             {
@@ -158,7 +158,19 @@ namespace WebService_LAB.controller
         public static String deleteAccount(int iD)
         {
             iD = Convert.ToInt32(iD);
-            return JsonConvert.SerializeObject(CustomerHandler.deleteAccount(iD));
+            Customer checkEntityStillExist = CustomerHandler.deleteAccount(iD);
+
+            String message = "";
+            if(checkEntityStillExist == null)
+            {
+                message = "Account deletion successful!";
+            }
+            else
+            {
+                message = "Account deletion error! Please try again later!";
+            }
+
+            return JsonConvert.SerializeObject(message);
         }
     }
 }

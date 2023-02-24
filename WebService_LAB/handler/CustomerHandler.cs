@@ -19,7 +19,7 @@ namespace WebService_LAB.handler
             return CustomerRepository.getACustomer(email, password);
         }
 
-        public static String register(String name, String email, String gender, String address, String password)
+        public static Customer register(String name, String email, String gender, String address, String password)
         {
             return CustomerRepository.addCustomer(name, email, gender, address, password);
         }
@@ -34,7 +34,7 @@ namespace WebService_LAB.handler
             return CustomerRepository.updateProfile(iD, name, email, gender, address, password);
         }
 
-        public static String deleteAccount(int iD)
+        public static Customer deleteAccount(int iD)
         {
             return CustomerRepository.deleteCustomer(iD);
         }

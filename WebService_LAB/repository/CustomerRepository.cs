@@ -53,19 +53,19 @@ namespace WebService_LAB.repository
             }
         }
 
-        public static String addCustomer(String name, String email, String gender, String address, String password)
+        public static Customer addCustomer(String name, String email, String gender, String address, String password)
         {
             Customer newCustomer = CustomerFactory.makeNewCustomer(name, email, gender, address, password);
             
             if(newCustomer == null)
             {
-                return "Customer insertion failed! Please try again later!";
+                return null;
             }
             else
             {
                 CustomerRepository.getInstance().Customers.Add(newCustomer);
                 CustomerRepository.getInstance().SaveChanges();
-                return "Customer Insertion successful!";
+                return newCustomer;
             }
         }
 
@@ -107,22 +107,13 @@ namespace WebService_LAB.repository
             }
         }
 
-        public static String deleteCustomer(int iD)
+        public static Customer deleteCustomer(int iD)
         {
             Customer findDeletedCustomer = CustomerRepository.getInstance().Customers.Find(iD);
             CustomerRepository.getInstance().Customers.Remove(findDeletedCustomer);
             CustomerRepository.getInstance().SaveChanges();
 
-            Customer checkCustomerStillExist = CustomerRepository.getInstance().Customers.Find(iD);
-
-            if(checkCustomerStillExist == null)
-            {
-                return "Account successfully deleted!";
-            }
-            else
-            {
-                return "Error! Please try again!";
-            }
+            return CustomerRepository.getInstance().Customers.Find(iD);
         }
     }
 }
