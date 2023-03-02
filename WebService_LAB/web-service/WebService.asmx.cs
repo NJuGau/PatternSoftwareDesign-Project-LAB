@@ -50,7 +50,10 @@ namespace WebService_LAB.web_service
         public string GetArtistByID(int id)
         {
             Artist artist = ArtistController.GetArtistByID(id);
-            String json = JsonConvert.SerializeObject(artist);
+            String json = JsonConvert.SerializeObject(artist, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
             return json;
         }
 
@@ -90,5 +93,22 @@ namespace WebService_LAB.web_service
         {
             return CustomerController.deleteAccount(iD);
         }
+
+        [WebMethod]
+        public bool InsertNewAlbum(string name, int artistId, string description, int price, int stock, string image)
+        {
+            return AlbumController.InsertNewAlbum(name, artistId, description, price, stock, image);
+        }
+
+        [WebMethod]
+        public string GetAlbumByID(int id)
+        {
+            Album album = AlbumController.GetAlbumByID(id);
+            string json = JsonConvert.SerializeObject(album, Formatting.None, new JsonSerializerSettings() {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
     }
 }
