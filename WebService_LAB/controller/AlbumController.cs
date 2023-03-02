@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -32,6 +32,18 @@ namespace WebService_LAB.controller
         public static List<Album> GetAllAlbums()
         {
             return AlbumHandler.GetAllAlbums();
+        }
+
+        public static bool UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
+        {
+            if (name.Length < 50 && description.Length < 255 && (price >= 100000 && price <= 1000000) && stock > 0 && image.Length > 0)
+            {
+                WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+                Artist findArtist = db.Artists.Find(artistId);
+                if (findArtist == null) return false;
+                else return AlbumHandler.UpdateAlbumByID(albumId,name, artistId, description, price, stock, image);
+            }
+            return false;
         }
     }
 }

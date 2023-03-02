@@ -32,5 +32,19 @@ namespace WebService_LAB.repository
             return albums;
         }
 
+        public static bool UpdateAlbumByID(int albumId,string name, int artistId, string description, int price, int stock, string image)
+        {
+            WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+            Album album = db.Albums.Find(albumId);
+            album.AlbumName = name;
+            album.AlbumDescription = description;
+            album.ArtistID = artistId;
+            album.AlbumPrice = price;
+            album.AlbumStock = stock;
+            album.AlbumImage = image;
+            db.SaveChanges();
+            return true;
+        }
+
     }
 }

@@ -24,5 +24,9 @@ namespace WebService_LAB.handler
             return AlbumRepository.GetAllAlbums();
         }
 
+        public static bool UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
+        {
+            return AlbumRepository.UpdateAlbumByID(albumId, name, artistId, description, price, stock, image);
+        }
     }
 }

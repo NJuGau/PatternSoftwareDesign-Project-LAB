@@ -117,5 +117,11 @@ namespace WebService_LAB.web_service
             string json = JsonConvert.SerializeObject(albums);
             return json;
         }
+
+        [WebMethod]
+        public bool UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
+        {
+            return AlbumController.UpdateAlbumByID(albumId, name, artistId, description, price, stock,image);
+        }
     }
 }
