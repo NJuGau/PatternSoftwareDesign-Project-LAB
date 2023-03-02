@@ -25,5 +25,12 @@ namespace WebService_LAB.repository
             return album;
         }
 
+        public static List<Album> GetAllAlbums()
+        {
+            WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+            List<Album> albums = (from a in db.Albums select a).ToList();
+            return albums;
+        }
+
     }
 }

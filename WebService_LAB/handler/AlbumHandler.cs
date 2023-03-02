@@ -19,5 +19,10 @@ namespace WebService_LAB.handler
             return AlbumRepository.GetAlbumByID(id);
         }
 
+        public static List<Album> GetAllAlbums()
+        {
+            return AlbumRepository.GetAllAlbums();
+        }
+
     }
 }

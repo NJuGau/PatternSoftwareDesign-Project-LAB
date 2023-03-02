@@ -25,5 +25,10 @@ namespace WebService_LAB.controller
             if (findAlbum == null) return null;
             return AlbumHandler.GetAlbumByID(id);
         }
+
+        public static List<Album> GetAllAlbums()
+        {
+            return AlbumHandler.GetAllAlbums();
+        }
     }
 }

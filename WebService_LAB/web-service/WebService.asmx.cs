@@ -110,5 +110,12 @@ namespace WebService_LAB.web_service
             return json;
         }
 
+        [WebMethod]
+        public string GetAllAlbums()
+        {
+            List<Album> albums = AlbumController.GetAllAlbums();
+            string json = JsonConvert.SerializeObject(albums);
+            return json;
+        }
     }
 }
