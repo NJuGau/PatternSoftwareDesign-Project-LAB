@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +13,10 @@ namespace WebService_LAB.controller
         {
             if(name.Length < 50 && description.Length < 255 && (price >= 100000 && price <= 1000000) && stock > 0 && image.Length > 0)
             {
-                return AlbumHandler.InsertNewAlbum(name, artistId, description, price, stock, image);
+                WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+                Artist findArtist = db.Artists.Find(artistId);
+                if (findArtist == null) return false;
+                else return AlbumHandler.InsertNewAlbum(name, artistId, description, price, stock, image);
             }
             return false;
         }
