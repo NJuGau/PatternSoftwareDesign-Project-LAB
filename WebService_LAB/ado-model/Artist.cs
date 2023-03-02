@@ -9,6 +9,7 @@
 
 namespace WebService_LAB.ado_model
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -25,6 +26,7 @@ namespace WebService_LAB.ado_model
         public string ArtistImage { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Album> Albums { get; set; }
     }
 }
