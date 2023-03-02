@@ -123,5 +123,11 @@ namespace WebService_LAB.web_service
         {
             return AlbumController.UpdateAlbumByID(albumId, name, artistId, description, price, stock,image);
         }
+
+        [WebMethod]
+        public static bool RemoveAlbumByID(int id)
+        {
+            return AlbumController.RemoveAlbumByID(id);
+        }
     }
 }

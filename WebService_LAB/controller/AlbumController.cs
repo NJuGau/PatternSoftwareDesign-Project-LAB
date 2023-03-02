@@ -45,5 +45,12 @@ namespace WebService_LAB.controller
             }
             return false;
         }
+
+        public static bool RemoveAlbumByID(int id)
+        {
+            WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+            Album findAlbum = db.Albums.Find(id);
+            return findAlbum != null && AlbumHandler.RemoveAlbumByID(id);
+        }
     }
 }

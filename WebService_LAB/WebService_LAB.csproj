@@ -90,6 +90,7 @@
     <Content Include="App_Data\WebServiceDatabase_log.ldf">
       <DependentUpon>WebServiceDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="Documentation\Dokomentasi Album Method.txt" />
     <Content Include="Documentation\Dokumentasi Artist Method.txt" />
     <Content Include="web-service\WebService.asmx" />
     <Content Include="Web.config" />

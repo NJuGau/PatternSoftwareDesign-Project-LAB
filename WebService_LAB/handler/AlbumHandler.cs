@@ -28,5 +28,10 @@ namespace WebService_LAB.handler
         {
             return AlbumRepository.UpdateAlbumByID(albumId, name, artistId, description, price, stock, image);
         }
+
+        public static bool RemoveAlbumByID(int id)
+        {
+            return AlbumRepository.RemoveAlbumByID(id);
+        }
     }
 }

@@ -46,5 +46,13 @@ namespace WebService_LAB.repository
             return true;
         }
 
+        public static bool RemoveAlbumByID(int id)
+        {
+            WebServiceDatabaseEntities db = new WebServiceDatabaseEntities();
+            Album album = db.Albums.Find(id);
+            db.Albums.Remove(album);
+            return true;
+        }
+
     }
 }
