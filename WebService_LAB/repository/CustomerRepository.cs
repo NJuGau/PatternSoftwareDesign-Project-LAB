@@ -5,25 +5,18 @@ using System.Web;
 using WebService_LAB.ado_model;
 using WebService_LAB.factory;
 
+
 namespace WebService_LAB.repository
 {
     public class CustomerRepository
     {
-        private static WebServiceDatabaseEntities webServiceDatabaseInstance;
-        private static WebServiceDatabaseEntities getInstance()
-        {
-            if (webServiceDatabaseInstance == null)
-            {
-                webServiceDatabaseInstance = new WebServiceDatabaseEntities();
-            }
-            return webServiceDatabaseInstance;
-        }
+        private static WebServiceDatabaseEntities db = DatabaseSingleton.getInstance();
 
         public static Customer checkUniqueEmail(String email)
         {
             try
             {
-                return (from customer in CustomerRepository.getInstance().Customers
+                return (from customer in db.Customers
                         where customer.CustomerEmail == email
                         select customer).First();
             }
@@ -35,7 +28,7 @@ namespace WebService_LAB.repository
 
         public static List<Customer> getAllCustomer()
         {
-            return (from customers in CustomerRepository.getInstance().Customers
+            return (from customers in db.Customers
                     select customers).ToList();
         }
 
@@ -43,7 +36,7 @@ namespace WebService_LAB.repository
         {
             try
             {
-                return (from customer in CustomerRepository.getInstance().Customers
+                return (from customer in db.Customers
                         where customer.CustomerEmail == email && customer.CustomerPassword == password
                         select customer).First();
             }
@@ -63,8 +56,8 @@ namespace WebService_LAB.repository
             }
             else
             {
-                CustomerRepository.getInstance().Customers.Add(newCustomer);
-                CustomerRepository.getInstance().SaveChanges();
+                db.Customers.Add(newCustomer);
+                db.SaveChanges();
                 return newCustomer;
             }
         }
@@ -73,7 +66,7 @@ namespace WebService_LAB.repository
         {
             try
             {
-                return (from customer in CustomerRepository.getInstance().Customers
+                return (from customer in db.Customers
                         where customer.CustomerID == iD
                         select customer).First();
             }
@@ -89,7 +82,7 @@ namespace WebService_LAB.repository
 
             try
             {
-                Customer updatedCustomer = (from customer in CustomerRepository.getInstance().Customers where customer.CustomerID == iD select customer).FirstOrDefault();
+                Customer updatedCustomer = (from customer in db.Customers where customer.CustomerID == iD select customer).FirstOrDefault();
 
                 updatedCustomer.CustomerName = name;
                 updatedCustomer.CustomerEmail = email;
@@ -97,7 +90,7 @@ namespace WebService_LAB.repository
                 updatedCustomer.CustomerAddress = address;
                 updatedCustomer.CustomerPassword = password;
 
-                CustomerRepository.getInstance().SaveChanges();
+                db.SaveChanges();
 
                 return updatedCustomer;
             }
@@ -109,11 +102,11 @@ namespace WebService_LAB.repository
 
         public static Customer deleteCustomer(int iD)
         {
-            Customer findDeletedCustomer = CustomerRepository.getInstance().Customers.Find(iD);
-            CustomerRepository.getInstance().Customers.Remove(findDeletedCustomer);
-            CustomerRepository.getInstance().SaveChanges();
+            Customer findDeletedCustomer = db.Customers.Find(iD);
+            db.Customers.Remove(findDeletedCustomer);
+            db.SaveChanges();
 
-            return CustomerRepository.getInstance().Customers.Find(iD);
+            return db.Customers.Find(iD);
         }
     }
 }
