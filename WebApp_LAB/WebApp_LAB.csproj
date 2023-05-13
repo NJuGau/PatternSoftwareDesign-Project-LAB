@@ -116,6 +116,7 @@
     <Content Include="assets\artists\638059447901481658.jfif" />
     <Content Include="assets\artists\638059450808002463.jfif" />
     <Content Include="view\artist\InsertArtist.aspx" />
+    <Content Include="view\artist\UpdateArtist.aspx" />
     <Content Include="view\home\Home.aspx" />
     <Content Include="view\user\Login.aspx" />
     <Content Include="view\user\Register.aspx" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="view\artist\InsertArtist.aspx.designer.cs">
       <DependentUpon>InsertArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\artist\UpdateArtist.aspx.cs">
+      <DependentUpon>UpdateArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\artist\UpdateArtist.aspx.designer.cs">
+      <DependentUpon>UpdateArtist.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

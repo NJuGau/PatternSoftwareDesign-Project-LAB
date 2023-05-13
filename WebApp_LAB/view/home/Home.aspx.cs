@@ -13,5 +13,15 @@ namespace WebApp_LAB.view.home
         {
 
         }
+
+        protected void insertBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../artist/InsertArtist.aspx");
+        }
+
+        protected void updateBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../artist/UpdateArtist.aspx");
+        }
     }
 }

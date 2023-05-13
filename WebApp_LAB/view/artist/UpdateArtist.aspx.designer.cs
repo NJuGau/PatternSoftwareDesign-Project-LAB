@@ -11,7 +11,7 @@ namespace WebApp_LAB.view.artist
 {
 
 
-    public partial class InsertArtist
+    public partial class UpdateArtist
     {
 
         /// <summary>
@@ -87,12 +87,12 @@ namespace WebApp_LAB.view.artist
         protected global::System.Web.UI.WebControls.Label errorImg;
 
         /// <summary>
-        /// insertBtn control.
+        /// updateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button insertBtn;
+        protected global::System.Web.UI.WebControls.Button updateBtn;
     }
 }

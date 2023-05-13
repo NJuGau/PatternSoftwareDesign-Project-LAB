@@ -19,7 +19,7 @@ namespace WebApp_LAB.view.user
             string email = emailTxt.Text;
             string pass = passTxt.Text;
             bool rememeber = rememberCheck.Checked;
-            Response.Redirect("../view/home/Home.aspx");
+            Response.Redirect("../home/Home.aspx");
         }
     }
 }
