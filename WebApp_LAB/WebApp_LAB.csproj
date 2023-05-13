@@ -115,6 +115,7 @@
     <Content Include="assets\artists\638059446432559006.jfif" />
     <Content Include="assets\artists\638059447901481658.jfif" />
     <Content Include="assets\artists\638059450808002463.jfif" />
+    <Content Include="view\artist\ArtistDetail.aspx" />
     <Content Include="view\artist\InsertArtist.aspx" />
     <Content Include="view\artist\UpdateArtist.aspx" />
     <Content Include="view\home\Home.aspx" />
@@ -157,6 +158,13 @@
       <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\artist\ArtistDetail.aspx.cs">
+      <DependentUpon>ArtistDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\artist\ArtistDetail.aspx.designer.cs">
+      <DependentUpon>ArtistDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\artist\InsertArtist.aspx.cs">
       <DependentUpon>InsertArtist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
