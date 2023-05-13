@@ -12,7 +12,8 @@
 <body>
     <form id="form" runat="server">
         <div id="navbar">
-            navbar here
+            <asp:HyperLink ID="homeLink" runat="server" NavigateUrl="~/view/home/Home.aspx">Home</asp:HyperLink>
+
         </div>
 
         <div>

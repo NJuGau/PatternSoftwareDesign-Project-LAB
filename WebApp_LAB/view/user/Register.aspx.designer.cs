@@ -33,15 +33,6 @@ namespace WebApp_LAB.view.user
         protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
-        /// nameValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator nameValid;
-
-        /// <summary>
         /// nameError control.
         /// </summary>
         /// <remarks>
@@ -69,15 +60,6 @@ namespace WebApp_LAB.view.user
         protected global::System.Web.UI.WebControls.TextBox emailTxt;
 
         /// <summary>
-        /// emailValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailValid;
-
-        /// <summary>
         /// genderLbl control.
         /// </summary>
         /// <remarks>
@@ -96,6 +78,15 @@ namespace WebApp_LAB.view.user
         protected global::System.Web.UI.WebControls.RadioButton maleRadio;
 
         /// <summary>
+        /// maleLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label maleLbl;
+
+        /// <summary>
         /// femaleRadio control.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,15 @@ namespace WebApp_LAB.view.user
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton femaleRadio;
+
+        /// <summary>
+        /// femaleLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label femaleLbl;
 
         /// <summary>
         /// addressLbl control.
@@ -121,15 +121,6 @@ namespace WebApp_LAB.view.user
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox addressTxt;
-
-        /// <summary>
-        /// addressValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator addressValid;
 
         /// <summary>
         /// addressError control.
@@ -157,15 +148,6 @@ namespace WebApp_LAB.view.user
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passTxt;
-
-        /// <summary>
-        /// passValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator passValid;
 
         /// <summary>
         /// passError control.

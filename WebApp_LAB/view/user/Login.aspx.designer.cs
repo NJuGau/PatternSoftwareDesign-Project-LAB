@@ -24,15 +24,6 @@ namespace WebApp_LAB.view.user
         protected global::System.Web.UI.WebControls.TextBox emailTxt;
 
         /// <summary>
-        /// emailValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailValid;
-
-        /// <summary>
         /// passTxt control.
         /// </summary>
         /// <remarks>
@@ -40,15 +31,6 @@ namespace WebApp_LAB.view.user
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passTxt;
-
-        /// <summary>
-        /// passValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator passValid;
 
         /// <summary>
         /// rememberCheck control.
