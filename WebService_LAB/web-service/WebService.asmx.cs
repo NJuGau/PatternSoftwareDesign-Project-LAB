@@ -57,7 +57,7 @@ namespace WebService_LAB.web_service
             return json;
         }
 
-        public Boolean RemoveArtistByID(int id)
+        public Boolean DeleteArtistByID(int id)
         {
             //return ArtistController.RemoveArtistByID(id) == true ? "Successfully remove artist" : "Artist remove failed";
 
@@ -125,7 +125,7 @@ namespace WebService_LAB.web_service
         }
 
         [WebMethod]
-        public static bool RemoveAlbumByID(int id)
+        public static bool DeleteAlbumByID(int id)
         {
             return AlbumController.RemoveAlbumByID(id);
         }

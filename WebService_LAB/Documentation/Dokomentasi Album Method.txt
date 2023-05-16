@@ -28,7 +28,7 @@ Method (return type, cara pakai, dan parameter) :
 		-> Return data		: Boolean
 
 	Delete : 
-		RemoveAlbumByID(int) :
+		DeleteAlbumByID(int) :
 		-> parameter		: Album's ID
 		-> Return type		: Boolean
 		-> Return data		: Boolean
