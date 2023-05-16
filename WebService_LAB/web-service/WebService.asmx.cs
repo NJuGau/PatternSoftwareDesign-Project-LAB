@@ -50,11 +50,14 @@ namespace WebService_LAB.web_service
         public string GetArtistByID(int id)
         {
             Artist artist = ArtistController.GetArtistByID(id);
-            String json = JsonConvert.SerializeObject(artist);
+            String json = JsonConvert.SerializeObject(artist, new JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
             return json;
         }
 
-        public Boolean RemoveArtistByID(int id)
+        public Boolean DeleteArtistByID(int id)
         {
             //return ArtistController.RemoveArtistByID(id) == true ? "Successfully remove artist" : "Artist remove failed";
 
@@ -89,6 +92,42 @@ namespace WebService_LAB.web_service
         public String deleteAccount(int iD)
         {
             return CustomerController.deleteAccount(iD);
+        }
+
+        [WebMethod]
+        public bool InsertNewAlbum(string name, int artistId, string description, int price, int stock, string image)
+        {
+            return AlbumController.InsertNewAlbum(name, artistId, description, price, stock, image);
+        }
+
+        [WebMethod]
+        public string GetAlbumByID(int id)
+        {
+            Album album = AlbumController.GetAlbumByID(id);
+            string json = JsonConvert.SerializeObject(album, Formatting.None, new JsonSerializerSettings() {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
+            return json;
+        }
+
+        [WebMethod]
+        public string GetAllAlbums()
+        {
+            List<Album> albums = AlbumController.GetAllAlbums();
+            string json = JsonConvert.SerializeObject(albums);
+            return json;
+        }
+
+        [WebMethod]
+        public bool UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
+        {
+            return AlbumController.UpdateAlbumByID(albumId, name, artistId, description, price, stock,image);
+        }
+
+        [WebMethod]
+        public static bool DeleteAlbumByID(int id)
+        {
+            return AlbumController.RemoveAlbumByID(id);
         }
     }
 }

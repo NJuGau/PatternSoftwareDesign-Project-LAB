@@ -9,6 +9,7 @@
 
 namespace WebService_LAB.ado_model
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -29,10 +30,13 @@ namespace WebService_LAB.ado_model
         public int AlbumStock { get; set; }
         public string AlbumDescription { get; set; }
     
+        [JsonIgnore]
         public virtual Artist Artist { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<Cart> Carts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [JsonIgnore]
         public virtual ICollection<TransactionDetail> TransactionDetails { get; set; }
     }
 }

@@ -28,7 +28,7 @@ Method (return type, cara pakai, dan parameter) :
 		-> Return data		: Boolean
 
 	Delete : 
-		RemoveArtistByID(INT) :
+		DeleteArtistByID(INT) :
 		-> parameter		: Artist ID
 		-> Return type		: Boolean
 		-> Return data		: Boolean
