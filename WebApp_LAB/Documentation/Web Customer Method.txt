@@ -1,0 +1,19 @@
+        Login:
+            input: email dan password
+            output: object customer yang ada, null, atau error message
+
+        register:
+            input: name, email, gender, address, password
+            output: object customer yang baru dibuat, null, atau error message
+
+        view Profile:
+            input: ID
+            output: Object customer yang dicari, atau null
+
+        update profile:
+            input: id, name, email, gender, address, password
+            output: object customer yang diupdate, null, atau error message
+
+        delete account: 
+            input: ID
+            ouput: message account berhasil di delete

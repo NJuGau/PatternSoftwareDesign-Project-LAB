@@ -115,6 +115,9 @@
     <Content Include="assets\artists\638059446432559006.jfif" />
     <Content Include="assets\artists\638059447901481658.jfif" />
     <Content Include="assets\artists\638059450808002463.jfif" />
+    <Content Include="Documentation\Dokomentasi Album Method.txt" />
+    <Content Include="Documentation\Dokumentasi Artist Method.txt" />
+    <Content Include="Documentation\Web Customer Method.txt" />
     <Content Include="view\home\Home.aspx" />
     <Content Include="view\user\Login.aspx" />
     <Content Include="view\user\Register.aspx" />
@@ -154,7 +157,28 @@
     <Compile Include="ado-model\TransactionHeader.cs">
       <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="controller\AlbumController.cs" />
+    <Compile Include="controller\ArtistController.cs" />
+    <Compile Include="controller\CustomerContoller.cs" />
+    <Compile Include="controller\TransactionDetailController.cs" />
+    <Compile Include="controller\TransactionHeaderController.cs" />
+    <Compile Include="factory\AlbumFactory.cs" />
+    <Compile Include="factory\ArtistFactory.cs" />
+    <Compile Include="factory\CustomerFactory.cs" />
+    <Compile Include="factory\TransactionDetailFactory.cs" />
+    <Compile Include="factory\TransactionHeaderFactory.cs" />
+    <Compile Include="handler\AlbumHandler.cs" />
+    <Compile Include="handler\ArtistHandler.cs" />
+    <Compile Include="handler\CustomerHandler.cs" />
+    <Compile Include="handler\TransactionDetailHandler.cs" />
+    <Compile Include="handler\TransactionHeaderHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repository\AlbumRepository.cs" />
+    <Compile Include="repository\ArtistRepository.cs" />
+    <Compile Include="repository\CustomerRepository.cs" />
+    <Compile Include="repository\DatabaseSingleton.cs" />
+    <Compile Include="repository\TransactionDetailRepository.cs" />
+    <Compile Include="repository\TransactionHeaderRepository.cs" />
     <Compile Include="view\home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
