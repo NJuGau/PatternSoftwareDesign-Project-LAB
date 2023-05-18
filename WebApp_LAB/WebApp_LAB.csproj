@@ -121,6 +121,7 @@
     <Content Include="view\home\Home.aspx" />
     <Content Include="view\user\Login.aspx" />
     <Content Include="view\user\Register.aspx" />
+    <Content Include="view\user\UpdateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="view\user\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\user\UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\user\UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
