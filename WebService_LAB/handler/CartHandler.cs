@@ -8,6 +8,10 @@ namespace WebService_LAB.handler
 {
     public class CartHandler
     {
+        public static bool AddNewCart(int customerId, int albumId, int quantity)
+        {
+            return CartRepository.AddNewCart(customerId, albumId, quantity);
+        }
         public static List<Cart> GetAllCarts()
         {
             return CartRepository.GetAllCarts();

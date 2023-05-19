@@ -131,6 +131,7 @@
     </Compile>
     <Compile Include="controller\AlbumController.cs" />
     <Compile Include="controller\ArtistController.cs" />
+    <Compile Include="controller\CartController.cs" />
     <Compile Include="controller\CustomerContoller.cs" />
     <Compile Include="factory\AlbumFactory.cs" />
     <Compile Include="factory\ArtistFactory.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="factory\CustomerFactory.cs" />
     <Compile Include="handler\AlbumHandler.cs" />
     <Compile Include="handler\ArtistHandler.cs" />
+    <Compile Include="handler\CartHandler.cs" />
     <Compile Include="handler\CustomerHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\AlbumRepository.cs" />
