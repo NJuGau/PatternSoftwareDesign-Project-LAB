@@ -7,47 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp_LAB.view.user
+namespace WebApp_LAB.view.artist
 {
 
 
-    public partial class Login
+    public partial class ArtistDetail
     {
 
         /// <summary>
-        /// emailTxt control.
+        /// imageLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxt;
+        protected global::System.Web.UI.WebControls.Label imageLbl;
 
         /// <summary>
-        /// passTxt control.
+        /// nameLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passTxt;
+        protected global::System.Web.UI.WebControls.Label nameLbl;
 
         /// <summary>
-        /// rememberCheck control.
+        /// albumLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox rememberCheck;
+        protected global::System.Web.UI.WebControls.Label albumLbl;
 
         /// <summary>
-        /// loginBtn control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button loginBtn;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

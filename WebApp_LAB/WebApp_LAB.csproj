@@ -118,9 +118,16 @@
     <Content Include="Documentation\Dokomentasi Album Method.txt" />
     <Content Include="Documentation\Dokumentasi Artist Method.txt" />
     <Content Include="Documentation\Web Customer Method.txt" />
+    <Content Include="view\album\AlbumDetail.aspx" />
+    <Content Include="view\album\InsertAlbum.aspx" />
+    <Content Include="view\album\UpdateAlbum.aspx" />
+    <Content Include="view\artist\ArtistDetail.aspx" />
+    <Content Include="view\artist\InsertArtist.aspx" />
+    <Content Include="view\artist\UpdateArtist.aspx" />
     <Content Include="view\home\Home.aspx" />
     <Content Include="view\user\Login.aspx" />
     <Content Include="view\user\Register.aspx" />
+    <Content Include="view\user\UpdateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +186,48 @@
     <Compile Include="repository\DatabaseSingleton.cs" />
     <Compile Include="repository\TransactionDetailRepository.cs" />
     <Compile Include="repository\TransactionHeaderRepository.cs" />
+    <Compile Include="view\album\AlbumDetail.aspx.cs">
+      <DependentUpon>AlbumDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\album\AlbumDetail.aspx.designer.cs">
+      <DependentUpon>AlbumDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\album\InsertAlbum.aspx.cs">
+      <DependentUpon>InsertAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\album\InsertAlbum.aspx.designer.cs">
+      <DependentUpon>InsertAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\album\UpdateAlbum.aspx.cs">
+      <DependentUpon>UpdateAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\album\UpdateAlbum.aspx.designer.cs">
+      <DependentUpon>UpdateAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\artist\ArtistDetail.aspx.cs">
+      <DependentUpon>ArtistDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\artist\ArtistDetail.aspx.designer.cs">
+      <DependentUpon>ArtistDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\artist\InsertArtist.aspx.cs">
+      <DependentUpon>InsertArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\artist\InsertArtist.aspx.designer.cs">
+      <DependentUpon>InsertArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\artist\UpdateArtist.aspx.cs">
+      <DependentUpon>UpdateArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\artist\UpdateArtist.aspx.designer.cs">
+      <DependentUpon>UpdateArtist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\home\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -213,6 +262,13 @@
     </Compile>
     <Compile Include="view\user\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\user\UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\user\UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

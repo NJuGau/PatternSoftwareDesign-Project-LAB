@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp_LAB.view.user
+namespace WebApp_LAB.view.album
 {
 
 
-    public partial class Register
+    public partial class UpdateAlbum
     {
 
         /// <summary>
@@ -33,138 +33,111 @@ namespace WebApp_LAB.view.user
         protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
-        /// nameError control.
+        /// descLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameError;
+        protected global::System.Web.UI.WebControls.Label descLbl;
 
         /// <summary>
-        /// emailLbl control.
+        /// descTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLbl;
+        protected global::System.Web.UI.WebControls.TextBox descTxt;
 
         /// <summary>
-        /// emailTxt control.
+        /// priceLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxt;
+        protected global::System.Web.UI.WebControls.Label priceLbl;
 
         /// <summary>
-        /// genderLbl control.
+        /// priceTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label genderLbl;
+        protected global::System.Web.UI.WebControls.TextBox priceTxt;
 
         /// <summary>
-        /// maleRadio control.
+        /// stockLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton maleRadio;
+        protected global::System.Web.UI.WebControls.Label stockLbl;
 
         /// <summary>
-        /// maleLbl control.
+        /// stockTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label maleLbl;
+        protected global::System.Web.UI.WebControls.TextBox stockTxt;
 
         /// <summary>
-        /// femaleRadio control.
+        /// imageLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton femaleRadio;
+        protected global::System.Web.UI.WebControls.Label imageLbl;
 
         /// <summary>
-        /// femaleLbl control.
+        /// artistImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label femaleLbl;
+        protected global::System.Web.UI.WebControls.FileUpload artistImg;
 
         /// <summary>
-        /// addressLbl control.
+        /// uploadValid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addressLbl;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator uploadValid;
 
         /// <summary>
-        /// addressTxt control.
+        /// imgValid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox addressTxt;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator imgValid;
 
         /// <summary>
-        /// addressError control.
+        /// errorImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addressError;
+        protected global::System.Web.UI.WebControls.Label errorImg;
 
         /// <summary>
-        /// passLbl control.
+        /// updateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passLbl;
-
-        /// <summary>
-        /// passTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passTxt;
-
-        /// <summary>
-        /// passError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passError;
-
-        /// <summary>
-        /// regisBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button regisBtn;
+        protected global::System.Web.UI.WebControls.Button updateBtn;
     }
 }

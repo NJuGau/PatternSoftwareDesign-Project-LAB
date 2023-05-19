@@ -13,5 +13,13 @@ namespace WebApp_LAB.view.user
         {
 
         }
+
+        protected void loginBtn_Click(object sender, EventArgs e)
+        {
+            string email = emailTxt.Text;
+            string pass = passTxt.Text;
+            bool rememeber = rememberCheck.Checked;
+            Response.Redirect("../home/Home.aspx");
+        }
     }
 }

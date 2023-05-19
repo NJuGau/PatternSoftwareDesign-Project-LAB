@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/master/FrontPage.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WebApp_LAB.view.user.Register" UnobtrusiveValidationMode="none" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/view/master/FrontPage.Master" AutoEventWireup="true" CodeBehind="UpdateProfile.aspx.cs" Inherits="WebApp_LAB.view.user.UpdateProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,5 +29,5 @@
     <asp:TextBox ID="passTxt" runat="server"></asp:TextBox>
     <asp:Label ID="passError" runat="server" Text="" ForeColor="Red"></asp:Label>
     <br />
-    <asp:Button ID="regisBtn" runat="server" Text="Register" OnClick="regisBtn_Click"/>
+    <asp:Button ID="updateBtn" runat="server" Text="Register" OnClick="updateBtn_Click"/>
 </asp:Content>

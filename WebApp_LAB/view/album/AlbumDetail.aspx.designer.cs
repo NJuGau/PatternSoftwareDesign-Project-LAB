@@ -7,47 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp_LAB.view.user
+namespace WebApp_LAB.view.album
 {
 
 
-    public partial class Login
+    public partial class AlbumDetail
     {
 
         /// <summary>
-        /// emailTxt control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailTxt;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// passTxt control.
+        /// qtyLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passTxt;
+        protected global::System.Web.UI.WebControls.Label qtyLbl;
 
         /// <summary>
-        /// rememberCheck control.
+        /// qtyTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox rememberCheck;
+        protected global::System.Web.UI.WebControls.TextBox qtyTxt;
 
         /// <summary>
-        /// loginBtn control.
+        /// cartBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button loginBtn;
+        protected global::System.Web.UI.WebControls.Button cartBtn;
     }
 }
