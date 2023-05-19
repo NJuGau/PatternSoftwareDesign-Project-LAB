@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_LAB.controller;
 
 namespace WebApp_LAB.view.artist
 {
@@ -16,14 +18,29 @@ namespace WebApp_LAB.view.artist
 
         protected void updateBtn_Click(object sender, EventArgs e)
         {
-            int size = artistImg.PostedFile.ContentLength;
-            if (size > 2000000)
+            string artistName = nameTxt.Text;
+            string fileName = "";
+            //TODO: Get artistID
+            int artistID = 0;
+
+            nameError.Text = ArtistController.checkArtistName(artistName);
+
+            if (artistImg.HasFile)
             {
-                errorImg.Text = "File size must be lower than 2 MB";
+                fileName = artistImg.PostedFile.FileName;
+                string extension = Path.GetExtension(fileName);
+                int fileSize = artistImg.PostedFile.ContentLength;
+                imageError.Text = ArtistController.checkartisImg(extension, fileSize);
             }
             else
             {
-                errorImg.Text = "success";
+                imageError.Text = "File is not chosen!";
+            }
+
+            if (nameError.Text.Equals("") && imageError.Text.Equals(""))
+            {
+                //TODO: Save image
+                ArtistController.UpdateArtist(artistID, artistName, fileName);
             }
         }
     }

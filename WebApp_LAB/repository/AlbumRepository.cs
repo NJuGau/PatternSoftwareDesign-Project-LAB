@@ -50,5 +50,12 @@ namespace WebApp_LAB.repository
             return true;
         }
 
+        public static List<Album> getAlbumByArtistID(int artistID)
+        {
+            return (from album in db.Albums
+                    where album.ArtistID == artistID
+                    select album).ToList();
+        }
+
     }
 }

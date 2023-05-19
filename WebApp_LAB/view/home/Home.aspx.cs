@@ -11,7 +11,10 @@ namespace WebApp_LAB.view.home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.Cookies["customer_id"] != null)
+            {
+                cookieTest.Text = Request.Cookies["customer_id"].Value;
+            }
         }
 
         protected void insertBtn_Click(object sender, EventArgs e)

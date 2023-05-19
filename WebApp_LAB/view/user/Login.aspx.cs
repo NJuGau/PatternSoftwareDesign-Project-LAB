@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_LAB.ado_model;
+using WebApp_LAB.controller;
 
 namespace WebApp_LAB.view.user
 {
@@ -11,7 +13,13 @@ namespace WebApp_LAB.view.user
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.Cookies["customer_id"] != null && Session["customer"] == null)
+            {
+                int iD = Convert.ToInt32(Request.Cookies["customer_id"].Value);
+                Customer c = CustomerController.getCustomerProfile(iD);
+                Session["customer"] = c;
+                Response.Redirect("~/view/user/UpdateProfile.aspx");
+            }
         }
 
         protected void loginBtn_Click(object sender, EventArgs e)
@@ -19,7 +27,27 @@ namespace WebApp_LAB.view.user
             string email = emailTxt.Text;
             string pass = passTxt.Text;
             bool rememeber = rememberCheck.Checked;
-            Response.Redirect("../home/Home.aspx");
+            Console.WriteLine(rememeber);
+
+            Customer c = CustomerController.login(email, pass);
+            if (c != null)
+            {
+
+                if (rememeber == true)
+                {
+                    //TODO: NOT WORKING
+                    HttpCookie cookie = new HttpCookie("customer_id");
+                    cookie.Value = c.CustomerID.ToString();
+                    cookie.Expires = DateTime.Now.AddDays(1);
+                    Request.Cookies.Add(cookie);
+                }
+                Session["customer"] = c;
+                Response.Redirect("~/view/home/Home.aspx");
+            }
+            else
+            {
+                loginError.Text = "Invalid Username or Password!";
+            }
         }
     }
 }

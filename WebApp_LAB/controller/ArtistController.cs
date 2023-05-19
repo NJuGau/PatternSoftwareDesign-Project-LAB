@@ -43,9 +43,24 @@ namespace WebApp_LAB.controller
             return "";
         }
 
+        public static string checkartisImg(string ext, int size)
+        {
+            ext = ext.ToLower();
+            String[] allowedExtension = { ".jpg", ".png", ".jfif", ".jpeg" };
+
+            if (allowedExtension.Contains(ext))
+            {
+                return "File must be in .jpg, .png, .jfif, or .jpeg format";
+            }
+            else if (size > 2 * 1024 *1024)
+            {
+                return "File must have maximum size of 2MB";
+            }
+            return "";
+        }
+
         public static void AddNewArtist(String name,String image)
         {
-            //validate extension file dan ukuran file di frontend.
             ArtistHandler.AddNewArtist(name, image);
         }
 

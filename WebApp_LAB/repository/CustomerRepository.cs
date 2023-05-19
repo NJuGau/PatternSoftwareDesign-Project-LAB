@@ -17,7 +17,7 @@ namespace WebApp_LAB.repository
             {
                 return (from customer in db.Customers
                         where customer.CustomerEmail == email
-                        select customer).First();
+                        select customer).FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -37,7 +37,7 @@ namespace WebApp_LAB.repository
             {
                 return (from customer in db.Customers
                         where customer.CustomerEmail == email && customer.CustomerPassword == password
-                        select customer).First();
+                        select customer).FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -58,7 +58,7 @@ namespace WebApp_LAB.repository
             {
                 return (from customer in db.Customers
                         where customer.CustomerID == iD
-                        select customer).First();
+                        select customer).FirstOrDefault();
             }
             catch (Exception e)
             {

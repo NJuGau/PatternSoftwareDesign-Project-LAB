@@ -33,5 +33,10 @@ namespace WebApp_LAB.handler
         {
             return AlbumRepository.RemoveAlbumByID(id);
         }
+
+        public static List<Album> getAlbumByArtistID(int artistID)
+        {
+            return AlbumRepository.getAlbumByArtistID(artistID);
+        }
     }
 }

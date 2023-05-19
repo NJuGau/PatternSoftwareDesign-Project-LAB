@@ -56,7 +56,7 @@ namespace WebApp_LAB.controller
             {
                 return "Name must be filled!";
             }
-            else if (name.Length <= 5 || name.Length >= 50)
+            else if (name.Length < 5 || name.Length > 50)
             {
                 return "Name must be between 5 and 50 characters!";
             }

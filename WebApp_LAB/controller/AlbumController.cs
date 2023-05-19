@@ -106,10 +106,9 @@ namespace WebApp_LAB.controller
             AlbumHandler.RemoveAlbumByID(id);
         }
 
-        //TODO
-        //public static List<Album> getAlbumByArtist(int artistId)
-        //{
-
-        //}
+        public static List<Album> getAlbumByArtistID(int artistID)
+        {
+            return AlbumHandler.getAlbumByArtistID(artistID);
+        }
     }
 }

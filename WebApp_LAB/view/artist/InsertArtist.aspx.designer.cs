@@ -33,13 +33,13 @@ namespace WebApp_LAB.view.artist
         protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
-        /// nameValid control.
+        /// nameError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator nameValid;
+        protected global::System.Web.UI.WebControls.Label nameError;
 
         /// <summary>
         /// imageLbl control.
@@ -60,31 +60,13 @@ namespace WebApp_LAB.view.artist
         protected global::System.Web.UI.WebControls.FileUpload artistImg;
 
         /// <summary>
-        /// uploadValid control.
+        /// imageError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator uploadValid;
-
-        /// <summary>
-        /// imgValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator imgValid;
-
-        /// <summary>
-        /// errorImg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorImg;
+        protected global::System.Web.UI.WebControls.Label imageError;
 
         /// <summary>
         /// insertBtn control.

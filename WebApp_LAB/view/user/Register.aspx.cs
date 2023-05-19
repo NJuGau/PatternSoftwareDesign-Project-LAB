@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_LAB.controller;
 
 namespace WebApp_LAB.view.user
 {
@@ -18,32 +19,30 @@ namespace WebApp_LAB.view.user
         {
             string name = nameTxt.Text;
             string email = emailTxt.Text;
-            string gender;
+            string gender ="";
             string address = addressTxt.Text;
             string pass = passTxt.Text;
-
-            int nameLen = name.Length;
-            //if(nameLen < 5 || nameLen > 50)
-            //{
-            //    nameError.Text = "Name must be between 5 - 50 characters";
-            //}
+            
             if (maleRadio.Checked)
             {
                 gender = "Male";
             }
-            else
+            else if(femaleRadio.Checked)
             {
                 gender = "Female";
             }
-            //if(address.EndsWith("Street") == false)
-            //{
-            //    addressError.Text = "Address must end with the word 'Street'";
-            //}
-            //if (!pass.All(char.IsLetterOrDigit))
-            //{
-            //    passError.Text = "Password must be alphanumeric only"
-            //}
 
+            nameError.Text = CustomerController.checkName(name);
+            emailError.Text = CustomerController.checkEmail(email);
+            genderError.Text = CustomerController.checkGender(gender);
+            addressError.Text = CustomerController.checkAddress(address);
+            passError.Text = CustomerController.checkPassword(pass);
+
+            if(nameError.Text.Equals("") && emailError.Text.Equals("") && genderError.Text.Equals("") && addressError.Text.Equals("") && passError.Text.Equals(""))
+            {
+                CustomerController.register(name, email, gender, address, pass);
+                Response.Redirect("~/view/user/Login.aspx");
+            }
         }
     }
 }

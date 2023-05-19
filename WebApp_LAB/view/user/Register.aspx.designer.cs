@@ -60,6 +60,15 @@ namespace WebApp_LAB.view.user
         protected global::System.Web.UI.WebControls.TextBox emailTxt;
 
         /// <summary>
+        /// emailError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailError;
+
+        /// <summary>
         /// genderLbl control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace WebApp_LAB.view.user
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label femaleLbl;
+
+        /// <summary>
+        /// genderError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label genderError;
 
         /// <summary>
         /// addressLbl control.
