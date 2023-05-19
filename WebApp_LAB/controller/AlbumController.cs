@@ -39,7 +39,7 @@ namespace WebApp_LAB.controller
 
         public static string checkAlbumPrice(int price)
         {
-            if (price.Equals(""))
+            if (price == 0)
             {
                 return "Album price must be filled!";
             }
@@ -52,7 +52,7 @@ namespace WebApp_LAB.controller
 
         public static string checkAlbumStock(int stock)
         {
-            if (stock.Equals(""))
+            if (stock == 0)
             {
                 return "Album stock must be filled!";
             }
@@ -63,11 +63,18 @@ namespace WebApp_LAB.controller
             return "";
         }
 
-        public static string checkAlbumImageName(string image)
+        public static string checkAlbumImageName(string ext, int size)
         {
-            if (image.Equals(""))
+            ext = ext.ToLower();
+            String[] allowedExtension = { ".jpg", ".png", ".jfif", ".jpeg" };
+
+            if (!allowedExtension.Contains(ext))
             {
-                return "Album image must be chosen!";
+                return "File must be in .jpg, .png, .jfif, or .jpeg format";
+            }
+            else if (size > 2 * 1024 * 1024)
+            {
+                return "File must have maximum size of 2MB";
             }
             return "";
         }
@@ -75,8 +82,7 @@ namespace WebApp_LAB.controller
         public static void InsertNewAlbum(string name, int artistId, string description, int price, int stock, string image)
         {
              Artist findArtist = ArtistController.GetArtistByID(artistId);
-             if (findArtist == null) return;
-             else AlbumHandler.InsertNewAlbum(name, artistId, description, price, stock, image);
+             AlbumHandler.InsertNewAlbum(name, artistId, description, price, stock, image);
         }
 
         public static Album GetAlbumByID(int id)
@@ -94,15 +100,11 @@ namespace WebApp_LAB.controller
         public static void UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
         {
             
-            Artist findArtist = ArtistController.GetArtistByID(artistId);
-            if (findArtist == null) return;
-            else AlbumHandler.UpdateAlbumByID(albumId,name, artistId, description, price, stock, image);
+            AlbumHandler.UpdateAlbumByID(albumId,name, artistId, description, price, stock, image);
         }
 
         public static void RemoveAlbumByID(int id)
         {
-            Album findAlbum = AlbumHandler.GetAlbumByID(id);
-            if (findAlbum == null) return;
             AlbumHandler.RemoveAlbumByID(id);
         }
 

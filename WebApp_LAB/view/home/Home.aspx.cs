@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_LAB.controller;
 
 namespace WebApp_LAB.view.home
 {
@@ -11,20 +12,35 @@ namespace WebApp_LAB.view.home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["customer_id"] != null)
-            {
-                cookieTest.Text = Request.Cookies["customer_id"].Value;
-            }
+            CardRepeater.DataSource = ArtistController.GetAllArtist();
+            CardRepeater.DataBind();
         }
 
         protected void insertBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../artist/InsertArtist.aspx");
+            Response.Redirect("~/view/artist/InsertArtist.aspx");
         }
 
         protected void updateBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../artist/UpdateArtist.aspx");
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            Response.Redirect("~/view/artist/UpdateArtist.aspx?id=" + id);
+            
+        }
+
+        protected void deleteBtn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            ArtistController.RemoveArtistByID(Convert.ToInt32(id));
+        }
+
+        protected void artistCard_Click(object sender, EventArgs e)
+        {
+            LinkButton card = (LinkButton)sender;
+            string id = card.CommandArgument;
+            Response.Redirect("~/view/artist/ArtistDetail.aspx?id=" + id);
         }
     }
 }

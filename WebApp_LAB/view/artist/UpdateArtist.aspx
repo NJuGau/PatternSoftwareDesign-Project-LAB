@@ -12,8 +12,7 @@
     <asp:Label ID="imageLbl" runat="server" Text="Image"></asp:Label>
     <asp:FileUpload ID="artistImg" runat="server" />
     <asp:Label ID="imageError" runat="server" Text="" ForeColor="Red"></asp:Label>
-    <%--<asp:RegularExpressionValidator ID="imgValid" runat="server" ErrorMessage="File must be .png, .jpg, .jpeg, or .jfif" ControlToValidate="artistImg" ForeColor="Red" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.gif|.jfif)$"></asp:RegularExpressionValidator>--%>
     <br />
 
-    <asp:Button ID="updateBtn" runat="server" Text="Insert" Onclick="updateBtn_Click"/>
+    <asp:Button ID="updateBtn" runat="server" Text="Update" Onclick="updateBtn_Click"/>
 </asp:Content>

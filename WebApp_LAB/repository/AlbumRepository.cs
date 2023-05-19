@@ -10,12 +10,11 @@ namespace WebApp_LAB.repository
     public class AlbumRepository
     {
         private static LocalDatabaseEntities db = DatabaseSingleton.getInstance();
-        public static bool InsertNewAlbum(string name, int artistId, string description, int price, int stock, string image)
+        public static void InsertNewAlbum(string name, int artistId, string description, int price, int stock, string image)
         {
             Album newAlbum = AlbumFactory.InsertNewAlbum(name, artistId, description, price, stock, image);
             db.Albums.Add(newAlbum);
             db.SaveChanges();
-            return true;
         }
 
         public static Album GetAlbumByID(int id)
@@ -30,7 +29,7 @@ namespace WebApp_LAB.repository
             return albums;
         }
 
-        public static bool UpdateAlbumByID(int albumId,string name, int artistId, string description, int price, int stock, string image)
+        public static void UpdateAlbumByID(int albumId,string name, int artistId, string description, int price, int stock, string image)
         {
             Album album = db.Albums.Find(albumId);
             album.AlbumName = name;
@@ -40,14 +39,13 @@ namespace WebApp_LAB.repository
             album.AlbumStock = stock;
             album.AlbumImage = image;
             db.SaveChanges();
-            return true;
         }
 
-        public static bool RemoveAlbumByID(int id)
+        public static void RemoveAlbumByID(int id)
         {
             Album album = db.Albums.Find(id);
             db.Albums.Remove(album);
-            return true;
+            db.SaveChanges();
         }
 
         public static List<Album> getAlbumByArtistID(int artistID)

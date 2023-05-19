@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApp_LAB.ado_model;
 using WebApp_LAB.controller;
 
 namespace WebApp_LAB.view.artist
@@ -13,17 +14,24 @@ namespace WebApp_LAB.view.artist
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                int id = Convert.ToInt32(Request.QueryString["Id"]);
+                Artist a = ArtistController.GetArtistByID(id);
+                nameTxt.Text = a.ArtistName;
+            }
         }
 
         protected void updateBtn_Click(object sender, EventArgs e)
         {
             string artistName = nameTxt.Text;
             string fileName = "";
-            //TODO: Get artistID
-            int artistID = 0;
 
             nameError.Text = ArtistController.checkArtistName(artistName);
+
+            //Get artistID
+            int artistID = Convert.ToInt32(Request.QueryString["Id"]);
+            Artist a = ArtistController.GetArtistByID(artistID);
 
             if (artistImg.HasFile)
             {
@@ -34,12 +42,24 @@ namespace WebApp_LAB.view.artist
             }
             else
             {
-                imageError.Text = "File is not chosen!";
+                fileName = a.ArtistImage;
             }
 
             if (nameError.Text.Equals("") && imageError.Text.Equals(""))
             {
-                //TODO: Save image
+                if (artistImg.HasFile)
+                {
+                    //Delete image
+                    string path = Server.MapPath("~/assets/artists/" + ArtistController.GetArtistByID(artistID).ArtistImage);
+                    FileInfo file = new FileInfo(path);
+                    if (file.Exists)
+                    {
+                        file.Delete();
+                    }
+                }
+
+                //Save image
+                artistImg.SaveAs(Server.MapPath("~/assets/artists/") + fileName);
                 ArtistController.UpdateArtist(artistID, artistName, fileName);
             }
         }

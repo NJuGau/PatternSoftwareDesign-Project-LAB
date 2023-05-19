@@ -24,6 +24,15 @@ namespace WebApp_LAB.view.artist
         protected global::System.Web.UI.WebControls.Label imageLbl;
 
         /// <summary>
+        /// artistImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image artistImg;
+
+        /// <summary>
         /// nameLbl control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace WebApp_LAB.view.artist
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label nameLbl;
+
+        /// <summary>
+        /// artistName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label artistName;
 
         /// <summary>
         /// albumLbl control.
@@ -42,12 +60,21 @@ namespace WebApp_LAB.view.artist
         protected global::System.Web.UI.WebControls.Label albumLbl;
 
         /// <summary>
-        /// GridView1 control.
+        /// CardRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Repeater CardRepeater;
+
+        /// <summary>
+        /// insertBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button insertBtn;
     }
 }

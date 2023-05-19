@@ -48,7 +48,7 @@ namespace WebApp_LAB.controller
             ext = ext.ToLower();
             String[] allowedExtension = { ".jpg", ".png", ".jfif", ".jpeg" };
 
-            if (allowedExtension.Contains(ext))
+            if (!allowedExtension.Contains(ext))
             {
                 return "File must be in .jpg, .png, .jfif, or .jpeg format";
             }

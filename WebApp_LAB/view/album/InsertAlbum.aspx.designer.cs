@@ -33,6 +33,15 @@ namespace WebApp_LAB.view.album
         protected global::System.Web.UI.WebControls.TextBox nameTxt;
 
         /// <summary>
+        /// nameError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nameError;
+
+        /// <summary>
         /// descLbl control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace WebApp_LAB.view.album
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox descTxt;
+
+        /// <summary>
+        /// descError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label descError;
 
         /// <summary>
         /// priceLbl control.
@@ -69,6 +87,15 @@ namespace WebApp_LAB.view.album
         protected global::System.Web.UI.WebControls.TextBox priceTxt;
 
         /// <summary>
+        /// priceError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label priceError;
+
+        /// <summary>
         /// stockLbl control.
         /// </summary>
         /// <remarks>
@@ -87,6 +114,15 @@ namespace WebApp_LAB.view.album
         protected global::System.Web.UI.WebControls.TextBox stockTxt;
 
         /// <summary>
+        /// stockError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label stockError;
+
+        /// <summary>
         /// imageLbl control.
         /// </summary>
         /// <remarks>
@@ -96,40 +132,22 @@ namespace WebApp_LAB.view.album
         protected global::System.Web.UI.WebControls.Label imageLbl;
 
         /// <summary>
-        /// artistImg control.
+        /// albumImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload artistImg;
+        protected global::System.Web.UI.WebControls.FileUpload albumImg;
 
         /// <summary>
-        /// uploadValid control.
+        /// imageError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator uploadValid;
-
-        /// <summary>
-        /// imgValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator imgValid;
-
-        /// <summary>
-        /// errorImg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorImg;
+        protected global::System.Web.UI.WebControls.Label imageError;
 
         /// <summary>
         /// insertBtn control.

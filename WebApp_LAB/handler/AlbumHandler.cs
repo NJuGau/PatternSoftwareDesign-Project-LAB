@@ -9,9 +9,9 @@ namespace WebApp_LAB.handler
 {
     public class AlbumHandler
     {
-        public static bool InsertNewAlbum(string name, int artistId, string description, int price, int stock, string image)
+        public static void InsertNewAlbum(string name, int artistId, string description, int price, int stock, string image)
         {
-            return AlbumRepository.InsertNewAlbum(name, artistId, description, price, stock, image);
+            AlbumRepository.InsertNewAlbum(name, artistId, description, price, stock, image);
         }
 
         public static Album GetAlbumByID(int id)
@@ -24,14 +24,14 @@ namespace WebApp_LAB.handler
             return AlbumRepository.GetAllAlbums();
         }
 
-        public static bool UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
+        public static void UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
         {
-            return AlbumRepository.UpdateAlbumByID(albumId, name, artistId, description, price, stock, image);
+            AlbumRepository.UpdateAlbumByID(albumId, name, artistId, description, price, stock, image);
         }
 
-        public static bool RemoveAlbumByID(int id)
+        public static void RemoveAlbumByID(int id)
         {
-            return AlbumRepository.RemoveAlbumByID(id);
+            AlbumRepository.RemoveAlbumByID(id);
         }
 
         public static List<Album> getAlbumByArtistID(int artistID)
