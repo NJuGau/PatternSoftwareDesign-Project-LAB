@@ -129,5 +129,25 @@ namespace WebService_LAB.web_service
         {
             return AlbumController.RemoveAlbumByID(id);
         }
+
+        [WebMethod]
+        public string GetAllCarts()
+        {
+            List<Cart> carts = CartController.GetAllCarts();
+            string json = JsonConvert.SerializeObject(carts);
+            return json;
+        }
+
+        [WebMethod]
+        public bool CheckOutCarts()
+        {
+            return CartController.CheckOutCart();
+        }
+
+        [WebMethod]
+        public bool AddNewCart(int customerId, int albumId, int quantity)
+        {
+            return CartController.AddNewCart(customerId,albumId,quantity);
+        }
     }
 }
