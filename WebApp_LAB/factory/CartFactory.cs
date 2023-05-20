@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebApp_LAB.ado_model;
-namespace WebService_LAB.factory
+namespace WebApp_LAB.factory
 {
     public class CartFactory
     {
