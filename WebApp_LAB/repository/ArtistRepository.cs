@@ -37,11 +37,11 @@ namespace WebApp_LAB.repository
             return artist;
         }
 
-        public static Boolean RemoveArtistByID(int id)
+        public static void RemoveArtistByID(int id)
         {
             Artist artist = db.Artists.Find(id);
             db.Artists.Remove(artist);
-            return true;
+            db.SaveChanges();
         }
     }
 }

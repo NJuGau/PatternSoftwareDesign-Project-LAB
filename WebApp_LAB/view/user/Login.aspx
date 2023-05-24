@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/view/master/FrontPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApp_LAB.view.user.Login" UnobtrusiveValidationMode="none" %>
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/view/master/MainPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApp_LAB.view.user.Login" UnobtrusiveValidationMode="none" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,8 +15,10 @@
     <br />
 
     <asp:CheckBox ID="rememberCheck" runat="server" />
-    <asp:Label ID="Label1" runat="server" Text="Remember Me"></asp:Label>
+    <asp:Label ID="rememberLbl" runat="server" Text="Remember Me"></asp:Label>
     <br />
     <asp:Label ID="loginError" runat="server" Text="" ForeColor="Red"></asp:Label>
+    <br />
+
     <asp:Button ID="loginBtn" runat="server" Text="Login" onclick="loginBtn_Click"/>
 </asp:Content>

@@ -81,7 +81,6 @@ namespace WebApp_LAB.controller
         public static void RemoveArtistByID(int id)
         {
             Artist artist = ArtistHandler.GetArtistByID(id);
-            if (artist == null) return;
             ArtistHandler.RemoveArtistByID(id);
         }
     }

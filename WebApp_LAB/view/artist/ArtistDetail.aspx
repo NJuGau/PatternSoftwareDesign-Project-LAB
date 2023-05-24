@@ -13,42 +13,36 @@
     <br />
     <asp:Label ID="artistName" runat="server" Text=""></asp:Label>
     <br />
+    <asp:Button ID="insertBtn" runat="server" Text="Insert Album" OnClick="insertBtn_Click" Visible="false"/>
 
+    <br />
     <asp:Label ID="albumLbl" runat="server" Text="Album Details"></asp:Label>
-   <%-- <asp:GridView ID="albumGrid" runat="server" AutoGenerateColumns="False">
-        <Columns>
-            <asp:ButtonField ButtonType="Button" CommandName="Update" HeaderText="Update Album" ShowHeader="True" Text="Update" />
-            <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Delete Album" ShowHeader="True" Text="Delete" />
-            <asp:ImageField DataImageUrlField="AlbumImage" DataImageUrlFormatString="~/assets/albums/{0}" HeaderText="Album Image" ReadOnly="True">
-            </asp:ImageField>
-            <asp:BoundField DataField="AlbumName" HeaderText="Album Name" ReadOnly="True" SortExpression="AlbumName" />
-            <asp:BoundField DataField="AlbumPrice" HeaderText="Album Price" ReadOnly="True" SortExpression="AlbumPrice" />
-            <asp:BoundField DataField="AlbumDescription" HeaderText="Album Description" ReadOnly="True" SortExpression="AlbumDescription" />
-        </Columns>
-    </asp:GridView>--%>
 
-    <asp:Repeater ID="CardRepeater" runat="server">
-        <ItemTemplate>
-            <div>
-                <asp:LinkButton ID="albumCard" runat="server" CommandArgument='<%#Eval("AlbumID") %>' OnClick="albumCard_Click">
-                    <div>
-                        <img src="../../assets/albums/<%# Eval("AlbumImage") %>" alt="...">
-                        <div>
-                            <p><%# Eval("AlbumName") %></p>
+    <div class="card-group">
+        <asp:Repeater ID="CardRepeater" runat="server" OnItemDataBound="CardRepeater_ItemDataBound">
+            <ItemTemplate>
+                <div class="card mx-4 my-5" style="max-width: 18rem;">
+                    <asp:LinkButton ID="albumCard" runat="server" CommandArgument='<%#Eval("AlbumID") %>' OnClick="albumCard_Click" style="text-decoration: none">
+                        <img src="../../assets/albums/<%# Eval("AlbumImage") %>" alt="..." class="card-img-top rounded" style="width: 18rem; height: 20rem; object-fit: cover">
+                        <div class="card-body">
+                            <div>
+                                <p><%# Eval("AlbumName") %></p>
+                            </div>
+                            <div>
+                                <p><%# Eval("AlbumPrice") %></p>
+                            </div>
+                            <div>
+                                <p><%# Eval("AlbumDescription") %></p>
+                            </div>
                         </div>
-                        <div>
-                            <p><%# Eval("AlbumPrice") %></p>
-                        </div>
-                        <div>
-                            <p><%# Eval("AlbumDescription") %></p>
-                        </div>
+                    </asp:LinkButton>
+                    <div class="flex-column">
+                        <asp:Button ID="updateBtn" runat="server" Text="Update" OnClick="updateBtn_Click" CommandArgument='<%#Eval("AlbumID") %>' class="btn btn-success m-1"/>
+                        <asp:Button ID="deleteBtn" runat="server" Text="Delete" OnClick="deleteBtn_Click" CommandArgument='<%#Eval("AlbumID") %>' class="btn btn-danger m-1"/>
                     </div>
-                </asp:LinkButton>
-                <asp:Button ID="updateBtn" runat="server" Text="Update" OnClick="updateBtn_Click" CommandArgument='<%#Eval("AlbumID") %>'/>
-                <asp:Button ID="deleteBtn" runat="server" Text="Delete" OnClick="deleteBtn_Click" CommandArgument='<%#Eval("AlbumID") %>'/>
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
 
-    <asp:Button ID="insertBtn" runat="server" Text="Insert Album" OnClick="insertBtn_Click"/>
 </asp:Content>

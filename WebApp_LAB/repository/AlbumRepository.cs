@@ -29,7 +29,7 @@ namespace WebApp_LAB.repository
             return albums;
         }
 
-        public static void UpdateAlbumByID(int albumId,string name, int artistId, string description, int price, int stock, string image)
+        public static void UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
         {
             Album album = db.Albums.Find(albumId);
             album.AlbumName = name;

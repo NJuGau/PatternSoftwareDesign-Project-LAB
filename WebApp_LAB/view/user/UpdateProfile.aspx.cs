@@ -13,7 +13,7 @@ namespace WebApp_LAB.view.user
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int iD=((Customer) Session["customer"]).CustomerID;
+            int iD= ((Customer) Session["User"]).CustomerID;
             Customer c = CustomerController.getCustomerProfile(iD);
             nameTxt.Text = c.CustomerName;
             emailTxt.Text = c.CustomerEmail;
@@ -48,6 +48,7 @@ namespace WebApp_LAB.view.user
             }
 
             nameError.Text = CustomerController.checkName(name);
+            // Controller error (email)
             emailError.Text = CustomerController.checkEmail(email);
             genderError.Text = CustomerController.checkGender(gender);
             addressError.Text = CustomerController.checkAddress(address);

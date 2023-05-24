@@ -87,8 +87,6 @@ namespace WebApp_LAB.controller
 
         public static Album GetAlbumByID(int id)
         {
-            Album findAlbum = AlbumHandler.GetAlbumByID(id);
-            if (findAlbum == null) return null;
             return AlbumHandler.GetAlbumByID(id);
         }
 
@@ -99,8 +97,7 @@ namespace WebApp_LAB.controller
 
         public static void UpdateAlbumByID(int albumId, string name, int artistId, string description, int price, int stock, string image)
         {
-            
-            AlbumHandler.UpdateAlbumByID(albumId,name, artistId, description, price, stock, image);
+            AlbumHandler.UpdateAlbumByID(albumId, name, artistId, description, price, stock, image);
         }
 
         public static void RemoveAlbumByID(int id)

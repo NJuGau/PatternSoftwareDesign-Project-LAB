@@ -16,6 +16,7 @@ namespace WebApp_LAB.factory
                 ArtistID = artistId,
                 AlbumDescription = description,
                 AlbumPrice = price,
+                AlbumStock = stock,
                 AlbumImage = image
             };
 

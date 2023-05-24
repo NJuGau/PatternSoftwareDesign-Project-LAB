@@ -29,9 +29,9 @@ namespace WebApp_LAB.handler
             return ArtistRepository.GetArtistByID(id);
         }
 
-        public static Boolean RemoveArtistByID(int id)
+        public static void RemoveArtistByID(int id)
         {
-            return ArtistRepository.RemoveArtistByID(id);
+            ArtistRepository.RemoveArtistByID(id);
         }
     }
 }

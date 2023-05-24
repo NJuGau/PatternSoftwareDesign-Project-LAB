@@ -35,7 +35,7 @@
     <br />
     <asp:FileUpload ID="albumImg" runat="server" />
     <br />
-    <asp:Label ID="imageError" runat="server" Text="tes" ForeColor=""></asp:Label>
+    <asp:Label ID="imageError" runat="server" Text="" ForeColor=""></asp:Label>
     <br />
 
     <asp:Button ID="updateBtn" runat="server" Text="Insert" OnClick="updateBtn_Click"/>

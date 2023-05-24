@@ -29,7 +29,6 @@ namespace WebApp_LAB.view.artist
 
             nameError.Text = ArtistController.checkArtistName(artistName);
 
-            //Get artistID
             int artistID = Convert.ToInt32(Request.QueryString["Id"]);
             Artist a = ArtistController.GetArtistByID(artistID);
 
@@ -49,18 +48,17 @@ namespace WebApp_LAB.view.artist
             {
                 if (artistImg.HasFile)
                 {
-                    //Delete image
                     string path = Server.MapPath("~/assets/artists/" + ArtistController.GetArtistByID(artistID).ArtistImage);
                     FileInfo file = new FileInfo(path);
                     if (file.Exists)
                     {
                         file.Delete();
                     }
+                    artistImg.SaveAs(Server.MapPath("~/assets/artists/") + fileName);
                 }
 
-                //Save image
-                artistImg.SaveAs(Server.MapPath("~/assets/artists/") + fileName);
                 ArtistController.UpdateArtist(artistID, artistName, fileName);
+                Response.Redirect("~/view/home/Home.aspx");
             }
         }
     }

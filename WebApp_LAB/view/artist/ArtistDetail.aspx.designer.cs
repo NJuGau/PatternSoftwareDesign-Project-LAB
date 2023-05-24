@@ -51,6 +51,15 @@ namespace WebApp_LAB.view.artist
         protected global::System.Web.UI.WebControls.Label artistName;
 
         /// <summary>
+        /// insertBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button insertBtn;
+
+        /// <summary>
         /// albumLbl control.
         /// </summary>
         /// <remarks>
@@ -67,14 +76,5 @@ namespace WebApp_LAB.view.artist
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater CardRepeater;
-
-        /// <summary>
-        /// insertBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button insertBtn;
     }
 }

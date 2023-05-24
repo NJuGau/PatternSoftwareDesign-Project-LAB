@@ -37,9 +37,9 @@ namespace WebApp_LAB.view.artist
 
             if (nameError.Text.Equals("") && imageError.Text.Equals(""))
             {
-                //TODO: Save image
                 artistImg.SaveAs(Server.MapPath("~/assets/artists/") + fileName);
                 ArtistController.AddNewArtist(artistName, fileName);
+                Response.Redirect("~/view/home/Home.aspx");
             }
         }
     }

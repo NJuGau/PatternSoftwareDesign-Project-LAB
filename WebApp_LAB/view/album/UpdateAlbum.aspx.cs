@@ -36,6 +36,7 @@ namespace WebApp_LAB.view.album
             string desc = descTxt.Text;
             int price = 0;
             int stock = 0;
+
             try
             {
                 price = Convert.ToInt32(priceTxt.Text);
@@ -65,6 +66,7 @@ namespace WebApp_LAB.view.album
                 string extension = Path.GetExtension(fileName);
                 int fileSize = albumImg.PostedFile.ContentLength;
                 imageError.Text = AlbumController.checkAlbumImageName(extension, fileSize);
+                albumImg.SaveAs(Server.MapPath("~/assets/albums/") + fileName);
             }
             else
             {
@@ -73,8 +75,8 @@ namespace WebApp_LAB.view.album
 
             if (nameError.Text.Equals("") && descError.Text.Equals("") && priceError.Text.Equals("") && stockError.Text.Equals("") && imageError.Text.Equals(""))
             {
-                albumImg.SaveAs(Server.MapPath("~/assets/albums/") + fileName);
                 AlbumController.UpdateAlbumByID(id, name, artistId, desc, price, stock, fileName);
+                Response.Redirect("~/view/artist/ArtistDetail.aspx?id=" + artistId);
             }
 
         }

@@ -35,13 +35,13 @@ namespace WebApp_LAB.view.user
 
                 if (rememeber == true)
                 {
-                    //TODO: NOT WORKING
-                    HttpCookie cookie = new HttpCookie("customer_id");
+                    HttpCookie cookie = new HttpCookie("user_cookie");
                     cookie.Value = c.CustomerID.ToString();
-                    cookie.Expires = DateTime.Now.AddDays(1);
-                    Request.Cookies.Add(cookie);
+                    cookie.Expires = DateTime.Now.AddHours(1);
+                    Response.Cookies.Add(cookie);
                 }
-                Session["customer"] = c;
+
+                Session["User"] = c;
                 Response.Redirect("~/view/home/Home.aspx");
             }
             else

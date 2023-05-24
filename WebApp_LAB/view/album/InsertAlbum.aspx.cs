@@ -62,6 +62,7 @@ namespace WebApp_LAB.view.album
             {
                 albumImg.SaveAs(Server.MapPath("~/assets/albums/") + fileName);
                 AlbumController.InsertNewAlbum(name, artistId, desc, price, stock, fileName);
+                Response.Redirect("~/view/artist/ArtistDetail.aspx?id=" + artistId);
             }
         }
     }
