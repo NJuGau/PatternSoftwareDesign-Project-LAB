@@ -13,30 +13,35 @@ namespace WebApp_LAB.view.user
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int iD= ((Customer) Session["User"]).CustomerID;
-            Customer c = CustomerController.getCustomerProfile(iD);
-            nameTxt.Text = c.CustomerName;
-            emailTxt.Text = c.CustomerEmail;
-            addressTxt.Text = c.CustomerAddress;
-            passTxt.Text = c.CustomerPassword;
-            if (c.CustomerGender.Equals("Male"))
+            if (!IsPostBack)
             {
-                maleRadio.Checked = true;
-            }
-            else
-            {
-                femaleRadio.Checked = true;
+                int iD= ((Customer) Session["User"]).CustomerID;
+                Customer c = CustomerController.getCustomerProfile(iD);
+                nameTxt.Text = c.CustomerName;
+                emailTxt.Text = c.CustomerEmail;
+                addressTxt.Text = c.CustomerAddress;
+                passTxt.Text = c.CustomerPassword;
+                if (c.CustomerGender.Equals("Male"))
+                {
+                    maleRadio.Checked = true;
+                }
+                else
+                {
+                    femaleRadio.Checked = true;
+                }
             }
         }
 
         protected void updateBtn_Click(object sender, EventArgs e)
         {
+            int iD = ((Customer)Session["User"]).CustomerID;
+            Customer c = CustomerController.getCustomerProfile(iD);
+
             string name = nameTxt.Text;
             string email = emailTxt.Text;
             string gender = "";
             string address = addressTxt.Text;
             string pass = passTxt.Text;
-            int iD = 1;
 
             if (maleRadio.Checked)
             {
@@ -48,8 +53,7 @@ namespace WebApp_LAB.view.user
             }
 
             nameError.Text = CustomerController.checkName(name);
-            // Controller error (email)
-            emailError.Text = CustomerController.checkEmail(email);
+            emailError.Text = CustomerController.validateEmail(email, iD);
             genderError.Text = CustomerController.checkGender(gender);
             addressError.Text = CustomerController.checkAddress(address);
             passError.Text = CustomerController.checkPassword(pass);

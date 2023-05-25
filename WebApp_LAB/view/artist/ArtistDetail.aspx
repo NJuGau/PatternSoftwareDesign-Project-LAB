@@ -2,47 +2,54 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Artist Detail</h1>
 
-    <asp:Label ID="imageLbl" runat="server" Text="Image"></asp:Label>
-    <br />
-    <asp:Image ID="artistImg" runat="server" />
-    <br />
-
-    <asp:Label ID="nameLbl" runat="server" Text="Name"></asp:Label>
-    <br />
-    <asp:Label ID="artistName" runat="server" Text=""></asp:Label>
-    <br />
-    <asp:Button ID="insertBtn" runat="server" Text="Insert Album" OnClick="insertBtn_Click" Visible="false"/>
-
-    <br />
-    <asp:Label ID="albumLbl" runat="server" Text="Album Details"></asp:Label>
-
-    <div class="card-group">
-        <asp:Repeater ID="CardRepeater" runat="server" OnItemDataBound="CardRepeater_ItemDataBound">
-            <ItemTemplate>
-                <div class="card mx-4 my-5" style="max-width: 18rem;">
-                    <asp:LinkButton ID="albumCard" runat="server" CommandArgument='<%#Eval("AlbumID") %>' OnClick="albumCard_Click" style="text-decoration: none">
-                        <img src="../../assets/albums/<%# Eval("AlbumImage") %>" alt="..." class="card-img-top rounded" style="width: 18rem; height: 20rem; object-fit: cover">
-                        <div class="card-body">
-                            <div>
-                                <p><%# Eval("AlbumName") %></p>
-                            </div>
-                            <div>
-                                <p><%# Eval("AlbumPrice") %></p>
-                            </div>
-                            <div>
-                                <p><%# Eval("AlbumDescription") %></p>
-                            </div>
-                        </div>
-                    </asp:LinkButton>
-                    <div class="flex-column">
-                        <asp:Button ID="updateBtn" runat="server" Text="Update" OnClick="updateBtn_Click" CommandArgument='<%#Eval("AlbumID") %>' class="btn btn-success m-1"/>
-                        <asp:Button ID="deleteBtn" runat="server" Text="Delete" OnClick="deleteBtn_Click" CommandArgument='<%#Eval("AlbumID") %>' class="btn btn-danger m-1"/>
-                    </div>
+    <div class="d-flex justify-content-around">
+        <div>
+            <h1 class="text-white mb-5">Artist Detail</h1>
+            <div class="card shadow-lg rounded align-items-center" style="max-width: 18rem; max-height:24rem; background-color: #201c24">
+                <asp:Image ID="artistImg" runat="server" style="width: 18rem; object-fit:cover" class="card-img-top"/>
+                <div class="card-body">
+                    <asp:Label class="h3 text-white" ID="artistName" runat="server" Text=""></asp:Label>
                 </div>
-            </ItemTemplate>
-        </asp:Repeater>
+            </div>
+        </div>
+
+        <div class="ms-5">
+            <div class="d-flex justify-content-between align-items-center mb-5 mt-0 me-5">    
+                <h2 class="text-white">Album Details</h2>
+                <asp:Button ID="insertBtn" runat="server" Text="Insert Album" OnClick="insertBtn_Click" Visible="false" class="btn btn-primary"/>
+            </div>
+
+            <div class="card-group">
+                 <div class="row row-cols-1 row-cols-md-3 g-4">
+                     <asp:Repeater ID="CardRepeater" runat="server" OnItemDataBound="CardRepeater_ItemDataBound">
+                            <ItemTemplate>
+                                <div class="col">
+                                    <div class="card shadow-lg rounded align-items-center" style="max-width: 18rem; background-color: #201c24">
+                                        <asp:LinkButton ID="albumCard" runat="server" CommandArgument='<%#Eval("AlbumID") %>' OnClick="albumCard_Click" style="text-decoration: none">
+                                            <img src="../../assets/albums/<%# Eval("AlbumImage") %>" alt="..." class="card-img-top rounded" style="width: 18rem; height: 20rem; object-fit: cover">
+                                            <div class="card-body fw-normal fs-4 text-white"">
+                                                <div class="d-flex justify-content-between align-items-baseline">
+                                                    <p><%# Eval("AlbumName") %></p>
+                                                    <p class="border border-2 p-2 rounded fs-5 fw-bold">$ <%# Eval("AlbumPrice") %></p>
+                                                </div>
+                                                <div>
+                                                    <p class="fs-6">"<%# Eval("AlbumDescription") %>"</p>
+                                                </div>
+                                            </div>
+                                        </asp:LinkButton>
+                                        <div class="flex-column mb-3">
+                                            <asp:Button ID="updateBtn" runat="server" Text="Update" OnClick="updateBtn_Click" CommandArgument='<%#Eval("AlbumID") %>' class="btn btn-success m-1"/>
+                                            <asp:Button ID="deleteBtn" runat="server" Text="Delete" OnClick="deleteBtn_Click" CommandArgument='<%#Eval("AlbumID") %>' class="btn btn-danger m-1"/>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                 </div>
+            </div>
+        </div>
     </div>
+
 
 </asp:Content>

@@ -27,10 +27,10 @@ namespace WebApp_LAB.view.artist
             string artistName = nameTxt.Text;
             string fileName = "";
 
-            nameError.Text = ArtistController.checkArtistName(artistName);
-
             int artistID = Convert.ToInt32(Request.QueryString["Id"]);
             Artist a = ArtistController.GetArtistByID(artistID);
+
+            nameError.Text = ArtistController.validateArtistName(artistName, a.ArtistName);
 
             if (artistImg.HasFile)
             {

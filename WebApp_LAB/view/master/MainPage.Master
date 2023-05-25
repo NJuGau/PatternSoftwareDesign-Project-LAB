@@ -11,20 +11,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="m-5">
+<body style="background-color: #28242c">
+    <div>
         <form id="form" runat="server">
-            <div id="navbar">
-                <asp:HyperLink ID="homeLink" runat="server" NavigateUrl="~/view/home/Home.aspx">Home</asp:HyperLink>
-                <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/view/user/Login.aspx" Visible="false">Login</asp:HyperLink>
-                <asp:HyperLink ID="registerLink" runat="server" NavigateUrl="~/view/user/Register.aspx" Visible="false">Register</asp:HyperLink>
-                <asp:HyperLink ID="cartLink" runat="server" NavigateUrl="">Cart</asp:HyperLink>
-                <asp:HyperLink ID="transactionLink" runat="server" NavigateUrl="">Transaction</asp:HyperLink>
-                <asp:HyperLink ID="updateLink" runat="server" NavigateUrl="~/view/user/UpdateProfile.aspx">Update Profile</asp:HyperLink>
-                <asp:LinkButton ID="logoutButton" runat="server" OnClick="logoutButton_Click">Logout</asp:LinkButton>
+            <div class="navbar navbar-expand-lg bg-body-tertiary ps-4 align-items-baseline sticky-top" style="background-color: #702cf4;">
+                <p class="navbar-brand fw-bold fs-2 m" style="color: white;">KpopZtation</p>
+                <div class="navbar-nav fs-5" style="color:white">
+                    <asp:HyperLink ID="homeLink" class="nav-link active text-white" runat="server" NavigateUrl="~/view/home/Home.aspx">Home</asp:HyperLink>
+                    <asp:HyperLink ID="loginLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/Login.aspx" Visible="false">Login</asp:HyperLink>
+                    <asp:HyperLink ID="registerLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/Register.aspx" Visible="false">Register</asp:HyperLink>
+                    <asp:HyperLink ID="cartLink" class="nav-link text-white" runat="server" NavigateUrl="">Cart</asp:HyperLink>
+                    <asp:HyperLink ID="transactionLink" class="nav-link text-white" runat="server" NavigateUrl="">Transaction</asp:HyperLink>
+                    <asp:HyperLink ID="updateLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/UpdateProfile.aspx">Update Profile</asp:HyperLink>
+                    <asp:LinkButton ID="logoutButton" class="nav-link text-white" runat="server" OnClick="logoutButton_Click">Logout</asp:LinkButton>
+                </div>
             </div>
 
-            <div>
+            <div class="m-5">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

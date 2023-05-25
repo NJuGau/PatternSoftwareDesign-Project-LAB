@@ -43,6 +43,19 @@ namespace WebApp_LAB.controller
             return "";
         }
 
+        public static string validateArtistName(string name, string currentName)
+        {
+            if (name.Equals(""))
+            {
+                return "Artist name must be filled!";
+            }
+            else if (!NameExistValidation(name) && name.Equals(currentName) == false)
+            {
+                return "Artist name must be unique!";
+            }
+            return "";
+        }
+
         public static string checkartisImg(string ext, int size)
         {
             ext = ext.ToLower();

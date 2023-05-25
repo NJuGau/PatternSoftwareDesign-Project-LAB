@@ -75,6 +75,20 @@ namespace WebApp_LAB.controller
             }
             return "";
         }
+        public static string validateEmail(string email, int id)
+        {
+            Customer currentCustomer = CustomerController.getCustomerProfile(id);
+            string currentEmailCustomer = currentCustomer.CustomerEmail;
+            if (email.Equals(""))
+            {
+                return "Email must be filled!";
+            }
+            else if (!checkUniqueEmail(email) && email.Equals(currentEmailCustomer) == false)
+            {
+                return "Choose another email address. Email must be unique!";
+            }
+            return "";
+        }
 
         public static string checkGender(string gender)
         {

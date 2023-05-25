@@ -9,8 +9,6 @@ namespace WebApp_LAB.controller
 {
     public class AlbumController
     {
-        //TODO: check val function
-
         public static string checkAlbumName(string name)
         {
             if (name.Equals(""))

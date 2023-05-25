@@ -2,42 +2,36 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Insert Album</h1>
+    <h1 class="text-white mb-5" style="text-align:center">Insert Album</h1>
 
-    <asp:Label ID="nameLbl" runat="server" Text="Name"></asp:Label>
-    <br />
-    <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="nameError" runat="server" Text="" ForeColor="Red"></asp:Label>
-    <br />
+    <div class="d-flex flex-wrap justify-content-center">
+        <div class="text-white border border-2 d-flex flex-column align-items-center p-3" style="width: 18rem">
+            <asp:Label ID="nameLbl" runat="server" Text="Name"></asp:Label>
+            <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
+            <asp:Label ID="nameError" runat="server" Text="" ForeColor="Red"></asp:Label>
+            <br />
 
-    <asp:Label ID="descLbl" runat="server" Text="Description"></asp:Label>
-    <br />
-    <asp:TextBox ID="descTxt" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="descError" runat="server" Text="" ForeColor="Red"></asp:Label>
-    <br />
+            <asp:Label ID="descLbl" runat="server" Text="Description"></asp:Label>
+            <asp:TextBox ID="descTxt" runat="server"></asp:TextBox>
+            <asp:Label ID="descError" runat="server" Text="" ForeColor="Red"></asp:Label>
+            <br />
 
-    <asp:Label ID="priceLbl" runat="server" Text="Price"></asp:Label>
-    <br />
-    <asp:TextBox ID="priceTxt" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="priceError" runat="server" Text="" ForeColor="Red"></asp:Label>
-    <br />
+            <asp:Label ID="priceLbl" runat="server" Text="Price"></asp:Label>
+            <asp:TextBox ID="priceTxt" runat="server"></asp:TextBox>
+            <asp:Label ID="priceError" runat="server" Text="" ForeColor="Red"></asp:Label>
+            <br />
 
-    <asp:Label ID="stockLbl" runat="server" Text="Stock"></asp:Label>
-    <br />
-    <asp:TextBox ID="stockTxt" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="stockError" runat="server" Text="" ForeColor="Red"></asp:Label>
-    <br />
+            <asp:Label ID="stockLbl" runat="server" Text="Stock"></asp:Label>
+            <asp:TextBox ID="stockTxt" runat="server"></asp:TextBox>
+            <asp:Label ID="stockError" runat="server" Text="" ForeColor="Red"></asp:Label>
+            <br />
 
-    <asp:Label ID="imageLbl" runat="server" Text="Image"></asp:Label>
-    <br />
-    <asp:FileUpload ID="albumImg" runat="server" />
-    <br />
-    <asp:Label ID="imageError" runat="server" Text="" ForeColor="Red"></asp:Label>
-    <br />
+            <asp:Label ID="imageLbl" runat="server" Text="Image"></asp:Label>
+            <asp:FileUpload ID="albumImg" runat="server" />
+            <asp:Label ID="imageError" runat="server" Text="" ForeColor="Red"></asp:Label>
+            <br />
 
-    <asp:Button ID="insertBtn" runat="server" Text="Insert" OnClick="insertBtn_Click"/>
+            <asp:Button ID="insertBtn" runat="server" Text="Insert" OnClick="insertBtn_Click" class="btn btn-primary"/>
+        </div>
+    </div>
 </asp:Content>

@@ -15,15 +15,6 @@ namespace WebApp_LAB.view.home
     {
 
         /// <summary>
-        /// CardRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater CardRepeater;
-
-        /// <summary>
         /// insertBtn control.
         /// </summary>
         /// <remarks>
@@ -31,5 +22,14 @@ namespace WebApp_LAB.view.home
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button insertBtn;
+
+        /// <summary>
+        /// CardRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater CardRepeater;
     }
 }
