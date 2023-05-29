@@ -315,6 +315,7 @@
     <Content Include="view\artist\InsertArtist.aspx" />
     <Content Include="view\artist\UpdateArtist.aspx" />
     <Content Include="view\home\Home.aspx" />
+    <Content Include="view\transaction\Cart.aspx" />
     <Content Include="view\user\Login.aspx" />
     <Content Include="view\user\Register.aspx" />
     <Content Include="view\user\UpdateProfile.aspx" />
@@ -362,6 +363,7 @@
     <Compile Include="controller\TransactionHeaderController.cs" />
     <Compile Include="factory\AlbumFactory.cs" />
     <Compile Include="factory\ArtistFactory.cs" />
+    <Compile Include="factory\CartFactory.cs" />
     <Compile Include="factory\CustomerFactory.cs" />
     <Compile Include="factory\TransactionDetailFactory.cs" />
     <Compile Include="factory\TransactionHeaderFactory.cs" />
@@ -435,6 +437,13 @@
     </Compile>
     <Compile Include="view\master\MainPage.Master.designer.cs">
       <DependentUpon>MainPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="view\transaction\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\transaction\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\user\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

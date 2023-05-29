@@ -22,5 +22,19 @@ namespace WebApp_LAB.controller
         {
             return CartHandler.AddNewCart(customerId, albumId, quantity);
         }
+
+        public static string checkStock(int qty, Album a)
+        {
+            int stock = a.AlbumStock;
+            if (qty <= 0)
+            {
+                return "Quantity must be filled!";
+            }
+            else if (qty > stock)
+            {
+                return "Stock isn't enough";
+            }
+            return "";
+        }
     }
 }

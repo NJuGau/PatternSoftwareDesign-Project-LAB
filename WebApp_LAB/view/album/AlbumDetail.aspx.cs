@@ -19,11 +19,44 @@ namespace WebApp_LAB.view.album
             descTxt.Text = a.AlbumDescription;
             priceTxt.Text = Convert.ToInt32(a.AlbumPrice).ToString();
             stockTxt.Text = Convert.ToInt32(a.AlbumStock).ToString();
+
+            string role = "";
+            if (Request.Cookies["user_cookie"] != null)
+            {
+                int userID = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
+                Customer user = CustomerController.getCustomerProfile(userID);
+                Session["User"] = user;
+                role = user.CustomerRole;
+            }
+            if ((Session["User"] == null) || (Session["User"] != null && role.Equals("Admin")))
+            {
+                qtyLbl.Visible = false;
+                qtyTxt.Visible = false;
+                cartBtn.Visible = false;
+            }
         }
 
         protected void cartBtn_Click(object sender, EventArgs e)
         {
-            int qty = Convert.ToInt32(qtyTxt.Text);
+            int userID = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
+            int id = Convert.ToInt32(Request.QueryString["Id"]);
+            Album a = AlbumController.GetAlbumByID(id);
+            int qty = 0;
+            try
+            {
+                qty = Convert.ToInt32(qtyTxt.Text);
+            }
+            catch
+            {
+                qty = 0;
+            }
+
+            qtyError.Text = CartController.checkStock(qty, a);
+
+            if (qtyError.Text.Equals(""))
+            {
+                CartController.AddNewCart(userID, id, qty);
+            }
         }
     }
 }
