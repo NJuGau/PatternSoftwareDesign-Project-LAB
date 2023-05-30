@@ -10,19 +10,22 @@ namespace WebApp_LAB.controller
 {
     public class CartController
     {
-        public static List<Cart> GetAllCarts()
+        public static List<Cart> GetAllCarts(int customerId)
         {
-            return CartHandler.GetAllCarts();
+            return CartHandler.GetAllCarts(customerId);
         }
-        public static bool CheckOutCart()
+        public static void CheckOutCart()
         {
-            return CartHandler.CheckOutCart();
+            CartHandler.CheckOutCart();
         }
-        public static bool AddNewCart(int customerId, int albumId, int quantity)
+        public static void AddNewCart(int customerId, int albumId, int quantity)
         {
-            return CartHandler.AddNewCart(customerId, albumId, quantity);
+            CartHandler.AddNewCart(customerId, albumId, quantity);
         }
-
+        public static void RemoveCartById(int customerId, int albumId)
+        {
+            CartHandler.RemoveCartById(customerId, albumId);
+        }
         public static string checkStock(int qty, Album a)
         {
             int stock = a.AlbumStock;

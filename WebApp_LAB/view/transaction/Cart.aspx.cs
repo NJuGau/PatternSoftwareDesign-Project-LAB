@@ -13,7 +13,7 @@ namespace WebApp_LAB.view.transaction
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int userId;
+            int userId = 0;
             if (Request.Cookies["user_cookie"] != null)
             {
                 userId = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
@@ -21,14 +21,35 @@ namespace WebApp_LAB.view.transaction
                 Session["User"] = user;
             }
 
-            //cartGrid.DataSource = CartController.GetAllCarts();
-            //cartGrid.DataBind();
+            if (!IsPostBack)
+            {
+                cartGrid.DataSource = CartController.GetAllCarts(userId);
+                cartGrid.DataBind();
+            }
 
         }
 
         protected void checkOutBtn_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/view/home/Home.aspx");
+        }
 
+        protected void cartGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int userId = 0;
+            if (Request.Cookies["user_cookie"] != null)
+            {
+                userId = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
+                Customer user = CustomerController.getCustomerProfile(userId);
+                Session["User"] = user;
+            }
+
+            GridViewRow row = cartGrid.Rows[e.RowIndex];
+            String ID = row.Cells[0].Text;
+            int id = Convert.ToInt32(ID);
+
+            CartController.RemoveCartById(userId, id);
+            Response.Redirect("~/view/transaction/Cart.aspx");
         }
     }
 }

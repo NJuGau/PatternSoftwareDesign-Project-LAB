@@ -6,10 +6,10 @@
 
     <div class="d-flex flex-wrap justify-content-center">
         <div class="text-white border border-2 d-flex flex-column align-items-center p-3" style="width: 18rem">
-            <asp:GridView ID="cartGrid" runat="server" AutoGenerateColumns="False">
+            <asp:GridView ID="cartGrid" runat="server" AutoGenerateColumns="False" OnRowDeleting="cartGrid_RowDeleting">
                 <Columns>
-                    <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Action" ShowHeader="True" Text="Remove"/>
                     <asp:BoundField DataField="AlbumID" HeaderText="Album ID" SortExpression="AlbumID" />
+                    <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Action" ShowHeader="True" Text="Remove"/>
                 </Columns>
             </asp:GridView>
 

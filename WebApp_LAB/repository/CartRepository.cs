@@ -11,32 +11,31 @@ namespace WebApp_LAB.repository
     {
         private static LocalDatabaseEntities db = new LocalDatabaseEntities();
 
-        public static bool AddNewCart(int customerId, int albumId, int quantity)
+        public static void AddNewCart(int customerId, int albumId, int quantity)
         {
             Cart newCart = CartFactory.CreateNewCart(customerId, albumId, quantity);
             db.Carts.Add(newCart);
             db.SaveChanges();
-            return true;
         }
 
-        public static List<Cart> GetAllCarts()
+        public static List<Cart> GetAllCarts(int customerId)
         {
-            List<Cart> carts = (from a in db.Carts select a).ToList();
+            List<Cart> carts = db.Carts.Where(c => c.CustomerID == customerId).ToList();
             return carts;
         }
 
-        public static Cart GetCartById(int customerId, int albumId)
+        public static void RemoveCartById(int customerId, int albumId)
         {
             Cart cart = db.Carts.FirstOrDefault(c => c.CustomerID == customerId && c.AlbumID == albumId);
-            return cart;
+            db.Carts.Remove(cart);
+            db.SaveChanges();
         }
 
-        public static bool CheckOutCart()
+        public static void CheckOutCart()
         {
             List<Cart> carts = (from a in db.Carts select a).ToList();
             db.Carts.RemoveRange(carts);
             db.SaveChanges();
-            return true;
         }
     }
 }

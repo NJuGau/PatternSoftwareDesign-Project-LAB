@@ -9,21 +9,21 @@ namespace WebApp_LAB.handler
 {
     public class CartHandler
     {
-        public static bool AddNewCart(int customerId, int albumId, int quantity)
+        public static void AddNewCart(int customerId, int albumId, int quantity)
         {
-            return CartRepository.AddNewCart(customerId, albumId, quantity);
+            CartRepository.AddNewCart(customerId, albumId, quantity);
         }
-        public static List<Cart> GetAllCarts()
+        public static List<Cart> GetAllCarts(int customerId)
         {
-            return CartRepository.GetAllCarts();
+            return CartRepository.GetAllCarts(customerId);
         }
-        public static Cart GetCartById(int customerId, int albumId)
+        public static void RemoveCartById(int customerId, int albumId)
         {
-            return CartRepository.GetCartById(customerId, albumId);
+            CartRepository.RemoveCartById(customerId, albumId);
         }
-        public static bool CheckOutCart()
+        public static void CheckOutCart()
         {
-            return CartRepository.CheckOutCart();
+            CartRepository.CheckOutCart();
         }
     }
 }
