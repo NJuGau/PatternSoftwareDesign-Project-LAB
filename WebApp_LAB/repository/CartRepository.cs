@@ -18,10 +18,17 @@ namespace WebApp_LAB.repository
             db.SaveChanges();
         }
 
-        public static List<Cart> GetAllCarts(int customerId)
+        public static dynamic GetAllCarts(int customerId)
         {
-            List<Cart> carts = db.Carts.Where(c => c.CustomerID == customerId).ToList();
-            return carts;
+            return db.Carts.Join(db.Albums, cart => cart.AlbumID, album => album.AlbumID, (cart, album) => new
+            {
+                CustomerID = cart.CustomerID,
+                AlbumID = cart.AlbumID,
+                AlbumName = album.AlbumName,
+                AlbumImage = album.AlbumImage,
+                AlbumPrice = album.AlbumPrice,
+                Quantity = cart.Qty,
+            }).Where(c => c.CustomerID == customerId).ToList();
         }
 
         public static void RemoveCartById(int customerId, int albumId)
@@ -36,6 +43,11 @@ namespace WebApp_LAB.repository
             List<Cart> carts = (from a in db.Carts select a).ToList();
             db.Carts.RemoveRange(carts);
             db.SaveChanges();
+        }
+
+        public static void RemoveStocks(int albumId, int quantity)
+        {
+
         }
     }
 }

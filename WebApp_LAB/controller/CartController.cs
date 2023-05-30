@@ -10,13 +10,17 @@ namespace WebApp_LAB.controller
 {
     public class CartController
     {
-        public static List<Cart> GetAllCarts(int customerId)
+        public static dynamic GetAllCarts(int customerId)
         {
             return CartHandler.GetAllCarts(customerId);
         }
         public static void CheckOutCart()
         {
             CartHandler.CheckOutCart();
+        }
+        public static void RemoveStocks(int albumId, int quantity)
+        {
+            CartHandler.RemoveStocks(albumId, quantity);
         }
         public static void AddNewCart(int customerId, int albumId, int quantity)
         {

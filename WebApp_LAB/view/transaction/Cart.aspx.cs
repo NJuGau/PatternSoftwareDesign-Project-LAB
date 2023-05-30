@@ -25,12 +25,16 @@ namespace WebApp_LAB.view.transaction
             {
                 cartGrid.DataSource = CartController.GetAllCarts(userId);
                 cartGrid.DataBind();
+                cartGrid.Columns[0].Visible = false;
             }
 
         }
-
         protected void checkOutBtn_Click(object sender, EventArgs e)
         {
+            // For loop utk ambil tiap data dan melakukan pengurangan
+
+            //CartController.RemoveStocks()
+            CartController.CheckOutCart();
             Response.Redirect("~/view/home/Home.aspx");
         }
 
@@ -44,6 +48,7 @@ namespace WebApp_LAB.view.transaction
                 Session["User"] = user;
             }
 
+            cartGrid.Columns[0].Visible = true;
             GridViewRow row = cartGrid.Rows[e.RowIndex];
             String ID = row.Cells[0].Text;
             int id = Convert.ToInt32(ID);
