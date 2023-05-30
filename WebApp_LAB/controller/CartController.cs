@@ -14,9 +14,9 @@ namespace WebApp_LAB.controller
         {
             return CartHandler.GetAllCarts(customerId);
         }
-        public static void CheckOutCart()
+        public static void CheckOutCart(int userId)
         {
-            CartHandler.CheckOutCart();
+            CartHandler.CheckOutCart(userId);
         }
         public static void RemoveStocks(int albumId, int quantity)
         {

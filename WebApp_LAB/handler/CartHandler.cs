@@ -21,9 +21,9 @@ namespace WebApp_LAB.handler
         {
             CartRepository.RemoveCartById(customerId, albumId);
         }
-        public static void CheckOutCart()
+        public static void CheckOutCart(int userId)
         {
-            CartRepository.CheckOutCart();
+            CartRepository.CheckOutCart(userId);
         }
 
         public static void RemoveStocks(int albumId, int quantity)

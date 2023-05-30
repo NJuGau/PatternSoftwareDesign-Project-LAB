@@ -34,8 +34,12 @@ namespace WebApp_LAB.view.transaction
             // For loop utk ambil tiap data dan melakukan pengurangan
 
             //CartController.RemoveStocks()
-            CartController.CheckOutCart();
-            Response.Redirect("~/view/home/Home.aspx");
+            if (Request.Cookies["user_cookie"] != null)
+            {
+                int userId = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
+                CartController.CheckOutCart(userId);
+                Response.Redirect("~/view/home/Home.aspx");
+            }
         }
 
         protected void cartGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)

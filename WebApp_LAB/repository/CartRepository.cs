@@ -38,9 +38,15 @@ namespace WebApp_LAB.repository
             db.SaveChanges();
         }
 
-        public static void CheckOutCart()
+        public static void CheckOutCart(int userId)
         {
-            List<Cart> carts = (from a in db.Carts select a).ToList();
+            List<Cart> carts = (from a in db.Carts where a.CustomerID == userId select a).ToList();
+            foreach (Cart c in carts)
+            {
+                Album album = AlbumRepository.GetAlbumByID(c.AlbumID);
+                album.AlbumStock -= c.Qty;
+                db.SaveChanges();
+            }
             db.Carts.RemoveRange(carts);
             db.SaveChanges();
         }
