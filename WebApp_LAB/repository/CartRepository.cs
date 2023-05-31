@@ -30,6 +30,17 @@ namespace WebApp_LAB.repository
                 Quantity = cart.Qty,
             }).Where(c => c.CustomerID == customerId).ToList();
         }
+        public static Cart GetCartById(int customerId, int albumId)
+        {
+            return db.Carts.FirstOrDefault(c => c.CustomerID == customerId && c.AlbumID == albumId);
+        }
+
+        public static void AddQuantity(int customerId, int albumId, int quantity)
+        {
+            Cart cart = CartRepository.GetCartById(customerId, albumId);
+            cart.Qty = cart.Qty + quantity;
+            db.SaveChanges();
+        }
 
         public static void RemoveCartById(int customerId, int albumId)
         {
@@ -49,11 +60,6 @@ namespace WebApp_LAB.repository
             }
             db.Carts.RemoveRange(carts);
             db.SaveChanges();
-        }
-
-        public static void RemoveStocks(int albumId, int quantity)
-        {
-
         }
     }
 }

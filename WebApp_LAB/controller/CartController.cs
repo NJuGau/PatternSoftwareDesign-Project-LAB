@@ -18,13 +18,16 @@ namespace WebApp_LAB.controller
         {
             CartHandler.CheckOutCart(userId);
         }
-        public static void RemoveStocks(int albumId, int quantity)
-        {
-            CartHandler.RemoveStocks(albumId, quantity);
-        }
         public static void AddNewCart(int customerId, int albumId, int quantity)
         {
-            CartHandler.AddNewCart(customerId, albumId, quantity);
+            if(CartHandler.GetCartById(customerId, albumId) == null)
+            {
+                CartHandler.AddNewCart(customerId, albumId, quantity);
+            }
+            else
+            {
+                CartHandler.AddQuantity(customerId, albumId, quantity);
+            }
         }
         public static void RemoveCartById(int customerId, int albumId)
         {

@@ -60,13 +60,13 @@ namespace WebApp_LAB.view.master
         protected global::System.Web.UI.WebControls.HyperLink registerLink;
 
         /// <summary>
-        /// cartLink control.
+        /// cartBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink cartLink;
+        protected global::System.Web.UI.WebControls.LinkButton cartBtn;
 
         /// <summary>
         /// transactionLink control.
@@ -87,13 +87,13 @@ namespace WebApp_LAB.view.master
         protected global::System.Web.UI.WebControls.HyperLink updateLink;
 
         /// <summary>
-        /// logoutButton control.
+        /// logoutBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logoutButton;
+        protected global::System.Web.UI.WebControls.LinkButton logoutBtn;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

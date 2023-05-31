@@ -20,10 +20,10 @@
                     <asp:HyperLink ID="homeLink" class="nav-link active text-white" runat="server" NavigateUrl="~/view/home/Home.aspx">Home</asp:HyperLink>
                     <asp:HyperLink ID="loginLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/Login.aspx" Visible="false">Login</asp:HyperLink>
                     <asp:HyperLink ID="registerLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/Register.aspx" Visible="false">Register</asp:HyperLink>
-                    <asp:HyperLink ID="cartLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/transaction/Cart.aspx">Cart</asp:HyperLink>
+                    <asp:LinkButton ID="cartBtn" class="nav-link text-white" runat="server" OnClick="cartBtn_Click">Cart</asp:LinkButton>
                     <asp:HyperLink ID="transactionLink" class="nav-link text-white" runat="server" NavigateUrl="">Transaction</asp:HyperLink>
                     <asp:HyperLink ID="updateLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/UpdateProfile.aspx">Update Profile</asp:HyperLink>
-                    <asp:LinkButton ID="logoutButton" class="nav-link text-white" runat="server" OnClick="logoutButton_Click">Logout</asp:LinkButton>
+                    <asp:LinkButton ID="logoutBtn" class="nav-link text-white" runat="server" OnClick="logoutBtn_Click">Logout</asp:LinkButton>
                 </div>
             </div>
 

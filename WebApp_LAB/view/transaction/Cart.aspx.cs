@@ -13,13 +13,7 @@ namespace WebApp_LAB.view.transaction
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int userId = 0;
-            if (Request.Cookies["user_cookie"] != null)
-            {
-                userId = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                Customer user = CustomerController.getCustomerProfile(userId);
-                Session["User"] = user;
-            }
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
 
             if (!IsPostBack)
             {
@@ -34,31 +28,22 @@ namespace WebApp_LAB.view.transaction
             // For loop utk ambil tiap data dan melakukan pengurangan
 
             //CartController.RemoveStocks()
-            if (Request.Cookies["user_cookie"] != null)
-            {
-                int userId = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                CartController.CheckOutCart(userId);
-                Response.Redirect("~/view/home/Home.aspx");
-            }
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
+            CartController.CheckOutCart(userId);
+            Response.Redirect("~/view/home/Home.aspx");
         }
 
         protected void cartGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int userId = 0;
-            if (Request.Cookies["user_cookie"] != null)
-            {
-                userId = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                Customer user = CustomerController.getCustomerProfile(userId);
-                Session["User"] = user;
-            }
+            int userId = Convert.ToInt32(Request.QueryString["userId"]);
 
             cartGrid.Columns[0].Visible = true;
             GridViewRow row = cartGrid.Rows[e.RowIndex];
             String ID = row.Cells[0].Text;
-            int id = Convert.ToInt32(ID);
+            int albumId = Convert.ToInt32(ID);
 
-            CartController.RemoveCartById(userId, id);
-            Response.Redirect("~/view/transaction/Cart.aspx");
+            CartController.RemoveCartById(userId, albumId);
+            Response.Redirect("~/view/transaction/Cart.aspx?userId=" + userId);
         }
     }
 }

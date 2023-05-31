@@ -13,47 +13,39 @@ namespace WebApp_LAB.view.master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            string role = "";
-            if (Request.Cookies["user_cookie"] != null)
-            {
-                int id = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                Customer user = CustomerController.getCustomerProfile(id);
-                Session["User"] = user;
-                role = user.CustomerRole;
-            } 
-
             if(Session["User"] == null)
             {
                 loginLink.Visible = true;
                 registerLink.Visible = true;
-                cartLink.Visible = false;
+                cartBtn.Visible = false;
                 transactionLink.Visible = false;
                 updateLink.Visible = false;
-                logoutButton.Visible = false;
+                logoutBtn.Visible = false;
             }
-            else if(Session["User"] != null && role.Equals("Admin"))
+            else if(Session["User"] != null && ((Customer)Session["User"]).CustomerRole.Equals("Admin"))
             {
-                cartLink.Visible = false;
+                cartBtn.Visible = false;
             }
         }
 
-        protected void logoutButton_Click(object sender, EventArgs e)
+        protected void cartBtn_Click(object sender, EventArgs e)
         {
-            if(Session["customer"] != null)
+            int userId = Convert.ToInt32(((Customer)Session["User"]).CustomerID);
+            Response.Redirect("~/view/transaction/Cart.aspx?userId=" + userId);
+        }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+            if (Session["User"] != null)
             {
-                HttpContext.Current.Session.Remove("customer");
-            }
-            else if(Session["admin"] != null)
-            {
-                HttpContext.Current.Session.Remove("admin");
+                HttpContext.Current.Session.Remove("User");
             }
             string[] cookies = HttpContext.Current.Request.Cookies.AllKeys;
             foreach (string cookie in cookies)
             {
                 HttpContext.Current.Response.Cookies[cookie].Expires = DateTime.Now.AddDays(-1);
             }
-            Response.Redirect("~/view/user/Login.aspx");    
+            Response.Redirect("~/view/user/Login.aspx");
         }
     }
 }

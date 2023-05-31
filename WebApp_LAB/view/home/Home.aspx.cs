@@ -13,16 +13,14 @@ namespace WebApp_LAB.view.home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string role = "";
-            if (Request.Cookies["user_cookie"] != null)
+            if (Request.Cookies["user_cookie"] != null && Session["User"] == null)
             {
-                int id = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                Customer user = CustomerController.getCustomerProfile(id);
-                Session["User"] = user;
-                role = user.CustomerRole;
+                int userId = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
+                Customer c = CustomerController.getCustomerProfile(userId);
+                Session["User"] = c;
             }
 
-            if (Session["User"] != null && role.Equals("Admin"))
+            if (Session["User"] != null && ((Customer)Session["User"]).CustomerRole.Equals("Admin"))
             {
                 insertBtn.Visible = true;
             }
@@ -42,37 +40,28 @@ namespace WebApp_LAB.view.home
         protected void updateBtn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            string id = btn.CommandArgument;
-            Response.Redirect("~/view/artist/UpdateArtist.aspx?id=" + id);
+            string artistId = btn.CommandArgument;
+            Response.Redirect("~/view/artist/UpdateArtist.aspx?artistId=" + artistId);
         }
 
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            string id = btn.CommandArgument;
-            ArtistController.RemoveArtistByID(Convert.ToInt32(id));
+            string artistId = btn.CommandArgument;
+            ArtistController.RemoveArtistByID(Convert.ToInt32(artistId));
             Response.Redirect("~/view/home/Home.aspx");
         }
 
         protected void artistCard_Click(object sender, EventArgs e)
         {
             LinkButton card = (LinkButton)sender;
-            string id = card.CommandArgument;
-            Response.Redirect("~/view/artist/ArtistDetail.aspx?id=" + id);
+            string artistId = card.CommandArgument;
+            Response.Redirect("~/view/artist/ArtistDetail.aspx?artistId=" + artistId);
         }
         
         protected void CardRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            string role = "";
-            if (Request.Cookies["user_cookie"] != null)
-            {
-                int id = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                Customer user = CustomerController.getCustomerProfile(id);
-                Session["User"] = user;
-                role = user.CustomerRole;
-            }
-
-            if ((Session["User"] != null && role.Equals("Custo")) || Session["User"] == null)
+            if ((Session["User"] != null && ((Customer)Session["User"]).CustomerRole.Equals("Custo")) || Session["User"] == null)
             {
                 (e.Item.FindControl("updateBtn") as Control).Visible = false;
                 (e.Item.FindControl("deleteBtn") as Control).Visible = false;

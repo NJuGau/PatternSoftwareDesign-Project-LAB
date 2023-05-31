@@ -18,7 +18,7 @@ namespace WebApp_LAB.view.album
 
         protected void insertBtn_Click(object sender, EventArgs e)
         {
-            int artistId = Convert.ToInt32(Request.QueryString["id"]);
+            int artistId = Convert.ToInt32(Request.QueryString["artistId"]);
             string name = nameTxt.Text;
             string desc = descTxt.Text;
             int price = 0;
@@ -62,7 +62,7 @@ namespace WebApp_LAB.view.album
             {
                 albumImg.SaveAs(Server.MapPath("~/assets/albums/") + fileName);
                 AlbumController.InsertNewAlbum(name, artistId, desc, price, stock, fileName);
-                Response.Redirect("~/view/artist/ArtistDetail.aspx?id=" + artistId);
+                Response.Redirect("~/view/artist/ArtistDetail.aspx?artistId=" + artistId);
             }
         }
     }

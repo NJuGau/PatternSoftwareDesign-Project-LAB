@@ -16,9 +16,9 @@ namespace WebApp_LAB.view.album
         {
             if (!IsPostBack)
             {
-                int id = Convert.ToInt32(Request.QueryString["id"]);
+                int albumId = Convert.ToInt32(Request.QueryString["albumId"]);
                 int artistId = Convert.ToInt32(Request.QueryString["artistId"]);
-                Album a = AlbumController.GetAlbumByID(id);
+                Album a = AlbumController.GetAlbumByID(albumId);
                 nameTxt.Text = a.AlbumName;
                 descTxt.Text = a.AlbumDescription;
                 priceTxt.Text = Convert.ToInt32(a.AlbumPrice).ToString();
@@ -29,8 +29,8 @@ namespace WebApp_LAB.view.album
         protected void updateBtn_Click(object sender, EventArgs e)
         {
             int artistId = Convert.ToInt32(Request.QueryString["artistId"]);
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            Album a = AlbumController.GetAlbumByID(id);
+            int albumId = Convert.ToInt32(Request.QueryString["albumId"]);
+            Album a = AlbumController.GetAlbumByID(albumId);
 
             string name = nameTxt.Text;
             string desc = descTxt.Text;
@@ -75,8 +75,8 @@ namespace WebApp_LAB.view.album
 
             if (nameError.Text.Equals("") && descError.Text.Equals("") && priceError.Text.Equals("") && stockError.Text.Equals("") && imageError.Text.Equals(""))
             {
-                AlbumController.UpdateAlbumByID(id, name, artistId, desc, price, stock, fileName);
-                Response.Redirect("~/view/artist/ArtistDetail.aspx?id=" + artistId);
+                AlbumController.UpdateAlbumByID(albumId, name, artistId, desc, price, stock, fileName);
+                Response.Redirect("~/view/artist/ArtistDetail.aspx?artistId=" + artistId);
             }
 
         }

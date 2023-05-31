@@ -13,11 +13,11 @@ namespace WebApp_LAB.view.user
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["customer_id"] != null && Session["customer"] == null)
+            if (Request.Cookies["user_cookie"] != null && Session["User"] == null)
             {
-                int iD = Convert.ToInt32(Request.Cookies["customer_id"].Value);
+                int iD = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
                 Customer c = CustomerController.getCustomerProfile(iD);
-                Session["customer"] = c;
+                Session["User"] = c;
                 Response.Redirect("~/view/user/UpdateProfile.aspx");
             }
         }

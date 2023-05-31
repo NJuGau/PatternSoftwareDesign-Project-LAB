@@ -16,8 +16,8 @@ namespace WebApp_LAB.view.artist
         {
             if (!IsPostBack)
             {
-                int id = Convert.ToInt32(Request.QueryString["Id"]);
-                Artist a = ArtistController.GetArtistByID(id);
+                int artistId = Convert.ToInt32(Request.QueryString["artistId"]);
+                Artist a = ArtistController.GetArtistByID(artistId);
                 nameTxt.Text = a.ArtistName;
             }
         }
@@ -27,7 +27,7 @@ namespace WebApp_LAB.view.artist
             string artistName = nameTxt.Text;
             string fileName = "";
 
-            int artistID = Convert.ToInt32(Request.QueryString["Id"]);
+            int artistID = Convert.ToInt32(Request.QueryString["artistId"]);
             Artist a = ArtistController.GetArtistByID(artistID);
 
             nameError.Text = ArtistController.validateArtistName(artistName, a.ArtistName);

@@ -13,22 +13,14 @@ namespace WebApp_LAB.view.album
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["Id"]);
-            Album a = AlbumController.GetAlbumByID(id);
+            int albumId = Convert.ToInt32(Request.QueryString["albumId"]);
+            Album a = AlbumController.GetAlbumByID(albumId);
             nameTxt.Text = a.AlbumName;
             descTxt.Text = a.AlbumDescription;
             priceTxt.Text = Convert.ToInt32(a.AlbumPrice).ToString();
             stockTxt.Text = Convert.ToInt32(a.AlbumStock).ToString();
 
-            string role = "";
-            if (Request.Cookies["user_cookie"] != null)
-            {
-                int userID = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-                Customer user = CustomerController.getCustomerProfile(userID);
-                Session["User"] = user;
-                role = user.CustomerRole;
-            }
-            if ((Session["User"] == null) || (Session["User"] != null && role.Equals("Admin")))
+            if ((Session["User"] == null) || (Session["User"] != null && ((Customer)Session["User"]).CustomerRole.Equals("Admin")))
             {
                 qtyLbl.Visible = false;
                 qtyTxt.Visible = false;
@@ -38,9 +30,9 @@ namespace WebApp_LAB.view.album
 
         protected void cartBtn_Click(object sender, EventArgs e)
         {
-            int userID = Convert.ToInt32(Request.Cookies["user_cookie"].Value);
-            int id = Convert.ToInt32(Request.QueryString["Id"]);
-            Album a = AlbumController.GetAlbumByID(id);
+            int userID = ((Customer)Session["User"]).CustomerID;
+            int albumId = Convert.ToInt32(Request.QueryString["albumId"]);
+            Album a = AlbumController.GetAlbumByID(albumId);
             int qty = 0;
             try
             {
@@ -55,7 +47,7 @@ namespace WebApp_LAB.view.album
 
             if (qtyError.Text.Equals(""))
             {
-                CartController.AddNewCart(userID, id, qty);
+                CartController.AddNewCart(userID, albumId, qty);
             }
         }
     }
