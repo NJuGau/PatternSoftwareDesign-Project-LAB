@@ -11,7 +11,7 @@ namespace WebApp_LAB.handler
     {
         public static void createTransactionDetail(int transactionID, int albumID, int qty)
         {
-            TransactionDetailRepository.createTransactionDetail(transactionID, albumID, qty);
+            TransactionDetailRepository.addTransactionDetail(transactionID, albumID, qty);
         }
 
         public static List<TransactionDetail> getDetail(int transactionID)

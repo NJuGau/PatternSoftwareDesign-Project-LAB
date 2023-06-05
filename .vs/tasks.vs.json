@@ -1,0 +1,20 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-PatternSoftwareDesign-Project-LAB",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-PatternSoftwareDesign-Project-LAB",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-WebApp_LAB",
+      "appliesTo": "WebApp_LAB/WebApp_LAB.csproj",
+      "type": "msbuild"
+    }
+  ]
+}

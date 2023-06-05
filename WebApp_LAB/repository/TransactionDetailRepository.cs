@@ -10,7 +10,7 @@ namespace WebApp_LAB.repository
     public class TransactionDetailRepository
     {
         private static LocalDatabaseEntities db = DatabaseSingleton.getInstance();
-        public static void createTransactionDetail(int transactionID, int albumID, int qty)
+        public static void addTransactionDetail(int transactionID, int albumID, int qty)
         {
             TransactionDetail newDet = TransactionDetailFactory.createTransactionDetail(transactionID, albumID, qty);
             db.TransactionDetails.Add(newDet);

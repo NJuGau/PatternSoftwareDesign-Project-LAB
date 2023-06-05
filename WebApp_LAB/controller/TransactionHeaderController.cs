@@ -14,7 +14,7 @@ namespace WebApp_LAB.controller
             TransactionHeaderHandler.createTransactionHeader(customerID, transactionDate);
         }
 
-        public static List<TransactionHeader> getAllCustomerTransactionHistory(int customerID)
+        public static dynamic getAllCustomerTransactionHistory(int customerID)
         {
             return TransactionHeaderHandler.getAllCustomerTransactionHistory(customerID);
         }

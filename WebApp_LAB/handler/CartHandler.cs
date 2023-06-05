@@ -32,7 +32,28 @@ namespace WebApp_LAB.handler
         }
         public static void CheckOutCart(int userId)
         {
-            CartRepository.CheckOutCart(userId);
+            // CartRepository.CheckOutCart(userId);
+
+            List<Cart> carts = CartRepository.GetAllJustCarts(userId);
+
+            if (carts.Count == 0)
+            {
+                return;
+            }
+
+            int transactionID = TransactionHeaderRepository.addTransactionHeader(userId, DateTime.Now);
+
+            foreach (Cart c in carts)
+            {
+                int qty = c.Qty;
+
+                Album album = AlbumRepository.GetAlbumByID(c.AlbumID);
+                AlbumRepository.UpdateAlbumByID(album.AlbumID, album.AlbumName, album.ArtistID, album.AlbumDescription, album.AlbumPrice, album.AlbumStock - qty, album.AlbumImage);
+
+                TransactionDetailRepository.addTransactionDetail(transactionID, c.AlbumID, qty);
+            }
+
+            CartRepository.RemoveAllCartsById(userId);
         }
     }
 }

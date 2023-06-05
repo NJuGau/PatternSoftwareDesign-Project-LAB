@@ -14,9 +14,9 @@ namespace WebApp_LAB.handler
             TransactionHeaderRepository.addTransactionHeader(customerID, transactionDate);
         }
 
-        public static List<TransactionHeader> getAllCustomerTransactionHistory(int customerID)
+        public static dynamic getAllCustomerTransactionHistory(int customerID)
         {
-            return TransactionHeaderRepository.getCustomerHeader(customerID);
+            return TransactionHeaderRepository.getTransactionHistory(customerID);
         }
     }
 }

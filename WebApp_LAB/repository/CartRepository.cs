@@ -30,6 +30,12 @@ namespace WebApp_LAB.repository
                 Quantity = cart.Qty,
             }).Where(c => c.CustomerID == customerId).ToList();
         }
+
+        public static List<Cart> GetAllJustCarts(int customerId)
+        {
+            return db.Carts.Where(c => c.CustomerID == customerId).ToList();
+        }
+
         public static Cart GetCartById(int customerId, int albumId)
         {
             return db.Carts.FirstOrDefault(c => c.CustomerID == customerId && c.AlbumID == albumId);
@@ -49,17 +55,35 @@ namespace WebApp_LAB.repository
             db.SaveChanges();
         }
 
-        public static void CheckOutCart(int userId)
+        public static void RemoveAllCartsById(int userId)
         {
-            List<Cart> carts = (from a in db.Carts where a.CustomerID == userId select a).ToList();
-            foreach (Cart c in carts)
-            {
-                Album album = AlbumRepository.GetAlbumByID(c.AlbumID);
-                album.AlbumStock -= c.Qty;
-                db.SaveChanges();
-            }
+            List<Cart> carts = CartRepository.GetAllJustCarts(userId);
             db.Carts.RemoveRange(carts);
             db.SaveChanges();
         }
+
+        //public static void CheckOutCart(int userId)
+        //{
+        //    // Remove all items from carts
+        //    List<Cart> carts = (from a in db.Carts where a.CustomerID == userId select a).ToList();
+
+        //    if (carts.Count == 0)
+        //    {
+        //        return;
+        //    }
+
+        //    TransactionHeaderRepository.addTransactionHeader(userId, DateTime.Now);
+        //    db.SaveChanges();
+            
+
+        //    foreach (Cart c in carts)
+        //    {
+        //        Album album = AlbumRepository.GetAlbumByID(c.AlbumID);
+        //        album.AlbumStock -= c.Qty;
+        //        db.SaveChanges();
+        //    }
+        //    db.Carts.RemoveRange(carts);
+        //    db.SaveChanges();
+        //}
     }
 }

@@ -316,6 +316,7 @@
     <Content Include="view\artist\UpdateArtist.aspx" />
     <Content Include="view\home\Home.aspx" />
     <Content Include="view\transaction\Cart.aspx" />
+    <Content Include="view\transaction\TransactionHistory.aspx" />
     <Content Include="view\user\Login.aspx" />
     <Content Include="view\user\Register.aspx" />
     <Content Include="view\user\UpdateProfile.aspx" />
@@ -444,6 +445,13 @@
     </Compile>
     <Compile Include="view\transaction\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\transaction\TransactionHistory.aspx.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\transaction\TransactionHistory.aspx.designer.cs">
+      <DependentUpon>TransactionHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="view\user\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
