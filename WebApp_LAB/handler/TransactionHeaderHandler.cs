@@ -18,5 +18,10 @@ namespace WebApp_LAB.handler
         {
             return TransactionHeaderRepository.getTransactionHistory(customerID);
         }
+
+        public static List<TransactionHeader> getAllTransactionHeaders()
+        {
+            return TransactionHeaderRepository.getAllTransactionHeaders();
+        }
     }
 }

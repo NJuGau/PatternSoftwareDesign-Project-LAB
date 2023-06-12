@@ -19,5 +19,10 @@ namespace WebApp_LAB.controller
             return TransactionHeaderHandler.getAllCustomerTransactionHistory(customerID);
         }
 
+        public static List<TransactionHeader> getAllTransactionHeaders()
+        {
+            return TransactionHeaderHandler.getAllTransactionHeaders();
+        }
+
     }
 }

@@ -21,7 +21,8 @@
                     <asp:HyperLink ID="loginLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/Login.aspx" Visible="false">Login</asp:HyperLink>
                     <asp:HyperLink ID="registerLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/Register.aspx" Visible="false">Register</asp:HyperLink>
                     <asp:LinkButton ID="cartBtn" class="nav-link text-white" runat="server" OnClick="cartBtn_Click">Cart</asp:LinkButton>
-                    <asp:HyperLink ID="transactionLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/transaction/TransactionHistory.aspx">Transaction</asp:HyperLink>
+                    <asp:HyperLink ID="transactionHistoryLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/transaction/TransactionHistory.aspx">Transaction</asp:HyperLink>
+                    <asp:HyperLink ID="transactionReportLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/transaction/TransactionReport.aspx">Transaction</asp:HyperLink>
                     <asp:HyperLink ID="updateLink" class="nav-link text-white" runat="server" NavigateUrl="~/view/user/UpdateProfile.aspx">Update Profile</asp:HyperLink>
                     <asp:LinkButton ID="logoutBtn" class="nav-link text-white" runat="server" OnClick="logoutBtn_Click">Logout</asp:LinkButton>
                 </div>

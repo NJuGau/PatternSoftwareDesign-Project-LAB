@@ -11,8 +11,7 @@ namespace WebApp_LAB.repository
         private static LocalDatabaseEntities db = DatabaseSingleton.getInstance();
         public static List<Artist> GetAllArtist()
         {
-                List<Artist> artists = (from a in db.Artists select a).ToList();
-                return artists;
+            return db.Artists.ToList();
         }
 
         public static void AddNewArtist (String name, String image)

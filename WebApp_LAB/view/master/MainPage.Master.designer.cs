@@ -69,13 +69,22 @@ namespace WebApp_LAB.view.master
         protected global::System.Web.UI.WebControls.LinkButton cartBtn;
 
         /// <summary>
-        /// transactionLink control.
+        /// transactionHistoryLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink transactionLink;
+        protected global::System.Web.UI.WebControls.HyperLink transactionHistoryLink;
+
+        /// <summary>
+        /// transactionReportLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink transactionReportLink;
 
         /// <summary>
         /// updateLink control.

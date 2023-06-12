@@ -18,13 +18,21 @@ namespace WebApp_LAB.view.master
                 loginLink.Visible = true;
                 registerLink.Visible = true;
                 cartBtn.Visible = false;
-                transactionLink.Visible = false;
+                transactionHistoryLink.Visible = false;
                 updateLink.Visible = false;
                 logoutBtn.Visible = false;
+                transactionReportLink.Visible = false;
             }
             else if(Session["User"] != null && ((Customer)Session["User"]).CustomerRole.Equals("Admin"))
             {
                 cartBtn.Visible = false;
+                transactionReportLink.Visible = true;
+                transactionHistoryLink.Visible = false;
+            }
+            else
+            {
+                // Not admin
+                transactionReportLink.Visible = false;
             }
         }
 

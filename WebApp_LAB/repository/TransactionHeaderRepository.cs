@@ -27,6 +27,11 @@ namespace WebApp_LAB.repository
                     where tr.CustomerID == customerID select tr).ToList();
         }
 
+        public static List<TransactionHeader> getAllTransactionHeaders()
+        {
+            return db.TransactionHeaders.ToList();
+        }
+
         public static dynamic getTransactionHistory(int customerID)
         {
             Customer customer = db.Customers.Where(c => c.CustomerID == customerID).FirstOrDefault();
