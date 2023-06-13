@@ -18,7 +18,7 @@
                     <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="Action" ShowHeader="True" Text="Remove"  ControlStyle-CssClass="btn btn-danger"/>
                 </Columns>
             </asp:GridView>
-
+            <asp:Label ID="qtyErrorTxt" runat="server" Text="" ForeColor="Red"></asp:Label>
             <asp:Button ID="checkOutBtn" runat="server" Text="Checkout" OnClick="checkOutBtn_Click" class="btn btn-success mt-5 btn-lg"/>
         </div>
     </div>

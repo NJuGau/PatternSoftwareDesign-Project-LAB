@@ -48,6 +48,7 @@ namespace WebApp_LAB.view.album
             if (qtyError.Text.Equals(""))
             {
                 CartController.AddNewCart(userID, albumId, qty);
+                Response.Redirect("~/view/transaction/Cart.aspx?userId="+ userID);
             }
         }
     }

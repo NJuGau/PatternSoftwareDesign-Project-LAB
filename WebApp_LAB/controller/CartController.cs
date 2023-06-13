@@ -10,10 +10,25 @@ namespace WebApp_LAB.controller
 {
     public class CartController
     {
-        public static dynamic GetAllCarts(int customerId)
+        public static dynamic GetAllCartsPage(int customerId)
         {
-            return CartHandler.GetAllCarts(customerId);
+            return CartHandler.GetAllCartsPage(customerId);
         }
+
+        public static string checkIfAllQtyAvail(int customerId)
+        {
+            List<Cart> cartList = CartHandler.getAllJustCarts(customerId);
+            foreach(Cart c in cartList)
+            {
+                Album a = AlbumController.GetAlbumByID(c.AlbumID);
+                if (c.Qty > a.AlbumStock)
+                {
+                    return "One or more cart item has not enough stock. Please check again!";
+                }
+            }
+            return "";
+        }
+
         public static void CheckOutCart(int userId)
         {
             CartHandler.CheckOutCart(userId);

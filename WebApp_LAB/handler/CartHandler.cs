@@ -13,9 +13,9 @@ namespace WebApp_LAB.handler
         {
             CartRepository.AddNewCart(customerId, albumId, quantity);
         }
-        public static dynamic GetAllCarts(int customerId)
+        public static dynamic GetAllCartsPage(int customerId)
         {
-            return CartRepository.GetAllCarts(customerId);
+            return CartRepository.GetAllCartsPage(customerId);
         }
 
         public static dynamic GetCartById(int customerId, int albumId)
@@ -30,6 +30,12 @@ namespace WebApp_LAB.handler
         {
             CartRepository.RemoveCartById(customerId, albumId);
         }
+
+        public static List<Cart> getAllJustCarts(int customerId)
+        {
+            return CartRepository.GetAllJustCarts(customerId);
+        }
+
         public static void CheckOutCart(int userId)
         {
             // CartRepository.CheckOutCart(userId);

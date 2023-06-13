@@ -18,7 +18,7 @@ namespace WebApp_LAB.repository
             db.SaveChanges();
         }
 
-        public static dynamic GetAllCarts(int customerId)
+        public static dynamic GetAllCartsPage(int customerId)
         {
             return db.Carts.Join(db.Albums, cart => cart.AlbumID, album => album.AlbumID, (cart, album) => new
             {

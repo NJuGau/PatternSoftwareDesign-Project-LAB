@@ -17,7 +17,7 @@ namespace WebApp_LAB.view.transaction
 
             if (!IsPostBack)
             {
-                cartGrid.DataSource = CartController.GetAllCarts(userId);
+                cartGrid.DataSource = CartController.GetAllCartsPage(userId);
                 cartGrid.DataBind();
                 cartGrid.Columns[0].Visible = false;
             }
@@ -29,8 +29,12 @@ namespace WebApp_LAB.view.transaction
 
             //CartController.RemoveStocks()
             int userId = Convert.ToInt32(Request.QueryString["userId"]);
-            CartController.CheckOutCart(userId);
-            Response.Redirect("~/view/home/Home.aspx");
+            qtyErrorTxt.Text = CartController.checkIfAllQtyAvail(userId);
+            if(qtyErrorTxt.Text == "")
+            {
+                CartController.CheckOutCart(userId);
+                Response.Redirect("~/view/home/Home.aspx");
+            }
         }
 
         protected void cartGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
