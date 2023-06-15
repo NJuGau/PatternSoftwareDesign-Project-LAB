@@ -1629,13 +1629,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ado-model\LocalDatabaseModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LocalDatabaseModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ado-model\LocalDatabaseModel.edmx.diagram">
-      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
@@ -1652,6 +1645,13 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="ado-model\LocalDatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LocalDatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ado-model\LocalDatabaseModel.edmx.diagram">
+      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="view\master\MainPage.Master" />
     <Content Include="Scripts\bootstrap.min.js.map" />
@@ -1811,6 +1811,7 @@
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

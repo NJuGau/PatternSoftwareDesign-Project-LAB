@@ -6,5 +6,5 @@
 	AlbumPrice INT NOT NULL,
 	AlbumStock INT NOT NULL,
 	AlbumDescription VARCHAR(255) NOT NULL,
-	FOREIGN KEY (ArtistID) REFERENCES [dbo].[Artist](ArtistID)
+	FOREIGN KEY (ArtistID) REFERENCES [dbo].[Artist](ArtistID) ON DELETE CASCADE
 )
