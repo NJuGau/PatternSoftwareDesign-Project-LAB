@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="d-flex justify-content-around">
-        <div>
+        <div class="ms-5">
             <h1 class="text-white mb-5">Artist Detail</h1>
             <div class="card shadow-lg rounded align-items-center" style="max-width: 18rem; max-height:24rem; background-color: #201c24">
                 <asp:Image ID="artistImg" runat="server" style="width: 18rem; object-fit:cover" class="card-img-top"/>
@@ -15,16 +15,16 @@
         </div>
 
         <div class="ms-5">
-            <div class="d-flex justify-content-between align-items-center mb-5 mt-0 me-5">    
-                <h2 class="text-white">Album Details</h2>
+            <div class="d-flex justify-content-between align-items-center mb-5 mt-0 mx-5">    
+                <h2 class="text-white me-5">Album Details</h2>
                 <asp:Button ID="insertBtn" runat="server" Text="Insert Album" OnClick="insertBtn_Click" Visible="false" class="btn btn-primary"/>
             </div>
 
-            <div class="card-group">
-                 <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="card-group ms-5">
+                 <div class="row gy-4">
                      <asp:Repeater ID="CardRepeater" runat="server" OnItemDataBound="CardRepeater_ItemDataBound">
                             <ItemTemplate>
-                                <div class="col">
+                                <div class="col gx-4">
                                     <div class="card shadow-lg rounded align-items-center" style="max-width: 18rem; background-color: #201c24">
                                         <asp:LinkButton ID="albumCard" runat="server" CommandArgument='<%#Eval("AlbumID") %>' OnClick="albumCard_Click" style="text-decoration: none">
                                             <img src="../../assets/albums/<%# Eval("AlbumImage") %>" alt="..." class="card-img-top rounded" style="width: 18rem; height: 20rem; object-fit: cover">
@@ -46,10 +46,10 @@
                                  </div>
                             </ItemTemplate>
                         </asp:Repeater>
+                     </div>
                  </div>
             </div>
         </div>
-    </div>
 
 
 </asp:Content>

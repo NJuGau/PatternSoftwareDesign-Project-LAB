@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -44,10 +45,31 @@ namespace WebApp_LAB.view.home
             Response.Redirect("~/view/artist/UpdateArtist.aspx?artistId=" + artistId);
         }
 
+        protected void deleteAlbumImageOnCascade(int artistId)
+        {
+            List<Album> albumList = AlbumController.getAlbumByArtistID(artistId);
+            foreach(Album album in albumList)
+            {
+                string path = Server.MapPath("~/assets/albums/" + album.AlbumImage);
+                FileInfo file = new FileInfo(path);
+                if (file.Exists)
+                {
+                    file.Delete();
+                }
+            }
+        }
+
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            string artistId = btn.CommandArgument;
+            string artistId = btn.CommandArgument;            
+            string path = Server.MapPath("~/assets/artists/" + ArtistController.GetArtistByID(Convert.ToInt32(artistId)).ArtistImage);
+            FileInfo file = new FileInfo(path);
+            if (file.Exists)
+            {
+                file.Delete();
+            }
+            deleteAlbumImageOnCascade(Convert.ToInt32(artistId));
             ArtistController.RemoveArtistByID(Convert.ToInt32(artistId));
             Response.Redirect("~/view/home/Home.aspx");
         }

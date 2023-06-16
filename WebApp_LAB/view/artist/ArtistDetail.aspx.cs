@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -50,12 +51,18 @@ namespace WebApp_LAB.view.artist
             string albumId = btn.CommandArgument;
             Response.Redirect("~/view/album/UpdateAlbum.aspx?artistId=" + artistId + "&albumId=" + albumId);
         }
-
+        
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
             int artistId = Convert.ToInt32(Request.QueryString["artistId"]);
             Button btn = (Button)sender;
             string id = btn.CommandArgument;
+            string path = Server.MapPath("~/assets/albums/" + AlbumController.GetAlbumByID(Convert.ToInt32(id)).AlbumImage);
+            FileInfo file = new FileInfo(path);
+            if (file.Exists)
+            {
+                file.Delete();
+            }
             AlbumController.RemoveAlbumByID(Convert.ToInt32(id));
             Response.Redirect("~/view/artist/ArtistDetail.aspx?artistId=" + artistId);
         }

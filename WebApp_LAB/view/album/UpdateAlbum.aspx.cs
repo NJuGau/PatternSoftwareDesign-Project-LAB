@@ -75,6 +75,17 @@ namespace WebApp_LAB.view.album
 
             if (nameError.Text.Equals("") && descError.Text.Equals("") && priceError.Text.Equals("") && stockError.Text.Equals("") && imageError.Text.Equals(""))
             {
+                if (albumImg.HasFile)
+                {
+                    string path = Server.MapPath("~/assets/albums/" + AlbumController.GetAlbumByID(albumId).AlbumImage);
+                    FileInfo file = new FileInfo(path);
+                    if (file.Exists)
+                    {
+                        file.Delete();
+                    }
+                    albumImg.SaveAs(Server.MapPath("~/assets/albums/") + fileName);
+                }
+
                 AlbumController.UpdateAlbumByID(albumId, name, artistId, desc, price, stock, fileName);
                 Response.Redirect("~/view/artist/ArtistDetail.aspx?artistId=" + artistId);
             }
