@@ -46,7 +46,7 @@ namespace WebApp_LAB.view.user
             }
             else
             {
-                loginError.Text = "Invalid Username or Password!";
+                loginError.Text = "Invalid Email or Password!";
             }
         }
     }

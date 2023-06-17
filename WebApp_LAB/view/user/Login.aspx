@@ -11,7 +11,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Email must be filled!" ForeColor="Red" ControlToValidate="emailTxt"></asp:RequiredFieldValidator>
 
             <h5>Password</h5>
-            <asp:TextBox ID="passTxt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="passTxt" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password must be filled!" ForeColor="Red" ControlToValidate="passTxt"></asp:RequiredFieldValidator>
             
             <div>
